@@ -187,64 +187,101 @@
     "screenshotPlaceholder": "Project screenshot placeholder"
   },
   "projects": {
-    "e-commerce-platform": {
-      "title": "E-Commerce Platform",
-      "shortDescription": "A full e-commerce website with product listings, cart functionality, and CMS-driven content.",
-      "longDescription": "Built a complete e-commerce experience featuring dynamic product catalogs, individual product pages with rich media, shopping cart functionality, and CMS-managed content. The platform was designed for scalability with SEO-friendly routing and responsive layouts that work seamlessly across all devices.",
-      "problem": "The client needed a modern, fast-loading e-commerce solution that could be easily updated by non-technical team members while maintaining excellent performance and SEO rankings.",
-      "solution": "Leveraged Next.js for server-side rendering and static generation, combined with Sanity CMS for content management. This gave the team full control over product listings, descriptions, and media while ensuring lightning-fast page loads and excellent search engine visibility.",
-      "role": "Frontend Developer",
-      "highlights": [
-        "Dynamic product catalog with filtering and search",
-        "CMS-managed content for easy updates",
-        "Responsive UI optimized for mobile and desktop",
-        "SEO-friendly routing and metadata",
-        "Scalable page structure for growth"
-      ]
-    },
     "carpentry-business-website": {
-      "title": "Carpentry Business Website",
-      "shortDescription": "A professional business website for a carpentry company showcasing services, projects, and driving conversions.",
-      "longDescription": "Designed and developed a professional business website for a carpentry company, focused on showcasing their craftsmanship, services, and completed projects. The site was built to drive inquiries and establish credibility with a clean, professional design.",
-      "problem": "The carpentry business needed an online presence that would showcase their work quality, list their services clearly, and convert visitors into leads through effective contact forms.",
-      "solution": "Created a fast-loading static site with Next.js, featuring a beautiful gallery section, detailed service pages, and strategically placed contact forms. Tailwind CSS ensured a polished, consistent design throughout.",
+      "title": "Almer Carpentry Business Website",
+      "shortDescription": "My first complete web project, built entirely with JavaScript for a real local business.",
+      "longDescription": "Almer was my very first full project and the one where I truly learned how to build a real website from start to finish. I handled everything myself, from structuring the pages to implementing the UI and logic. This project is built entirely with JavaScript (no TypeScript) and taught me how to think like a developer solving real business problems, not just following tutorials.",
+      "problem": "The business needed a simple but professional online presence to showcase services and previous work, without relying on complex tools or third-party platforms.",
+      "solution": "I built a clean, responsive website using modern JavaScript and Next.js, focusing on clarity, performance, and usability. The site clearly presents the business services, past projects, and contact information in a way that is easy for both users and the business owner.",
       "role": "Frontend Developer",
       "highlights": [
-        "Service pages with detailed descriptions",
-        "Gallery and portfolio section",
-        "Contact forms for lead generation",
-        "Business-focused UI/UX design",
-        "Fast-loading static pages"
+        "First complete end-to-end project",
+        "Built entirely with JavaScript",
+        "Real client and real business needs",
+        "Responsive layout for all devices",
+        "Strong learning experience in structure and problem-solving"
       ]
     },
+
+    "cyber-security-blog": {
+      "title": "0wnit – Cyber Security Blog",
+      "shortDescription": "A cyber security blog platform with custom-designed UI and CMS-powered content creation.",
+      "longDescription": "0wnit is the project where I focused heavily on design and UI quality. I designed and built every component myself, paying close attention to layout, spacing, typography, and overall user experience. The platform functions as a blog where users can create and manage posts through Sanity CMS, making it both flexible and scalable.",
+      "problem": "Most cyber security blogs look generic and focus only on content, ignoring design and usability. I wanted to create something that feels modern, readable, and visually distinctive.",
+      "solution": "I designed a custom component system from scratch and connected it to Sanity CMS, allowing blog posts to be created and managed easily. The result is a fast, clean, and visually polished blog platform that balances strong design with powerful content management.",
+      "role": "Frontend Developer & UI Designer",
+      "highlights": [
+        "Custom UI design from scratch",
+        "CMS-powered blog content using Sanity",
+        "Strong focus on UX and readability",
+        "Modern, minimal, and consistent design system",
+        "One of my strongest design-focused projects"
+      ]
+    },
+
+    "ai-learning-platform": {
+      "title": "Knowledge Flow – AI Learning Platform",
+      "shortDescription": "An AI-powered learning platform built for a hackathon using OpenAI integration.",
+      "longDescription": "Knowledge Flow was built as part of a hackathon, where the goal was to explore how AI can support personalized learning. I developed the frontend and integrated AI features using the OpenAI API, focusing on interaction, clarity, and fast iteration under time pressure.",
+      "problem": "Traditional learning platforms often lack personalization and real-time feedback, making it harder for users to stay engaged.",
+      "solution": "By integrating AI through the OpenAI API, the platform can provide dynamic learning assistance and content suggestions. The project demonstrates how AI can enhance educational experiences when combined with a clean and intuitive frontend.",
+      "role": "Frontend Developer",
+      "highlights": [
+        "Built during a hackathon",
+        "AI integration using OpenAI API",
+        "Focus on learning and experimentation",
+        "Rapid development under time constraints",
+        "Exploration of AI-driven user interaction"
+      ]
+    },
+
+    "ai-next-earth": {
+      "title": "Next Earth – AI-Powered Volunteering Platform",
+      "shortDescription": "A hackathon project that uses AI to help users discover volunteering opportunities.",
+      "longDescription": "Next Earth was created for a hackathon with the idea of using AI to connect people with volunteering opportunities that match their interests and skills. I worked on the frontend and AI integration, combining OpenAI-powered logic with real-world datasets to produce meaningful results.",
+      "problem": "Finding relevant volunteering opportunities can be overwhelming, especially when platforms are not personalized.",
+      "solution": "By using AI and structured datasets, the platform helps users discover volunteering roles that better align with their preferences. This project allowed me to explore AI-driven recommendations and data presentation in a real-world context.",
+      "role": "Frontend Developer",
+      "highlights": [
+        "Hackathon-built project",
+        "AI-powered recommendations",
+        "Integration with OpenAI API",
+        "Use of external datasets",
+        "Focus on meaningful real-world impact"
+      ]
+    },
+
     "back-office-dashboard": {
       "title": "Back Office Dashboard",
-      "shortDescription": "An internal back-office system for managing content, business data, and daily operations.",
-      "longDescription": "Built an internal administration dashboard for managing business content, data, and operations. The system features data tables, forms for content management, and a modular architecture designed for extensibility.",
-      "problem": "The team needed an internal tool to manage content, track business data, and streamline daily operations without relying on spreadsheets or manual processes.",
-      "solution": "Developed a modular React dashboard with Sanity CMS integration, providing structured data management, clear navigation, and role-based views. The component architecture ensures easy maintenance and feature additions.",
+      "shortDescription": "An Angular-based back office application built to learn enterprise-style frontend development.",
+      "longDescription": "I built this back office dashboard specifically to learn Angular and understand how large-scale, enterprise-style applications are structured. The project focuses on components, services, routing, and state management patterns commonly used in admin and internal tools.",
+      "problem": "Many frontend developers struggle when moving from simple apps to complex dashboards and internal systems.",
+      "solution": "By building a back office application from scratch, I learned how to structure Angular projects, manage forms, handle data flows, and build reusable components that scale well in larger applications.",
       "role": "Frontend Developer",
       "highlights": [
-        "Admin dashboard with clean UI",
-        "Data tables and management forms",
-        "CMS-powered content control",
-        "Modular component architecture",
-        "Structured navigation system"
+        "Built to learn Angular fundamentals",
+        "Component-based architecture",
+        "Form handling and data management",
+        "Admin-style UI patterns",
+        "Strong foundation for enterprise applications"
       ]
     },
-    "multi-page-business-website": {
-      "title": "Multi-Page Business Website",
-      "shortDescription": "A large-scale business website with 20+ pages, structured navigation, and CMS-backed content.",
-      "longDescription": "Architected and built a large-scale business website featuring over 20 pages with structured navigation, SEO planning, and CMS-backed content management. The project required careful planning of information architecture and scalable routing.",
-      "problem": "The business required a comprehensive website with many pages covering different services, locations, and information sections, all needing to be easily maintainable and SEO-optimized.",
-      "solution": "Used Next.js with Sanity CMS to create a scalable, content-managed website. Reusable layout components and a clear routing structure made the site easy to maintain and extend, while SEO-ready structure ensured strong search visibility.",
+
+    "e-commerce-platform": {
+      "title": "Auren – Full E-Commerce Platform",
+      "shortDescription": "A complete, production-level e-commerce platform with advanced features and integrations.",
+      "longDescription": "Auren is my most complete and ambitious project. It is a full e-commerce platform that includes product management, user authentication, wishlists, orders, analytics, and a complete back office. I designed and built the frontend architecture, integrated multiple services, and focused on creating a realistic production-ready system.",
+      "problem": "Building a real e-commerce platform requires handling many complex flows such as user accounts, orders, analytics, emails, and content management — all while keeping performance and UX high.",
+      "solution": "I used Next.js for performance and scalability, Sanity CMS for content management, a database for users and orders, and implemented email notifications for order placement and status changes. The admin back office allows managing products, orders, and analytics efficiently.",
       "role": "Frontend Developer",
       "highlights": [
-        "Over 20 pages with structured navigation",
-        "CMS-managed pages for easy updates",
-        "Scalable routing architecture",
-        "SEO-ready structure and metadata",
-        "Reusable layout components"
+        "Full e-commerce store functionality",
+        "User authentication and profiles",
+        "Wishlist and order management",
+        "CMS-driven product and content management",
+        "Admin dashboard for analytics and order status",
+        "Email integration for order updates",
+        "Most complex and complete project I’ve built"
       ]
     }
   },

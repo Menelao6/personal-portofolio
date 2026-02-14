@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react"
@@ -15,7 +15,8 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [direction, setDirection] = useState<'left' | 'right'>('right')
+  const [isAnimating, setIsAnimating] = useState(false)
+  const [direction, setDirection] = useState<'next' | 'prev'>('next')
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
   const isEven = index % 2 === 0
@@ -24,26 +25,43 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   const title = t(`${project.i18nKey}.title`)
   const shortDescription = t(`${project.i18nKey}.shortDescription`)
 
-  // Minimum swipe distance (in px)
   const minSwipeDistance = 50
 
   const handleNextImage = () => {
-    setDirection('right')
-    setCurrentImageIndex((prev) => (prev + 1) % project.images.length)
+    if (isAnimating) return
+    setDirection('next')
+    setIsAnimating(true)
+    
+    setTimeout(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % project.images.length)
+      setIsAnimating(false)
+    }, 600)
   }
 
   const handlePrevImage = () => {
-    setDirection('left')
-    setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length)
+    if (isAnimating) return
+    setDirection('prev')
+    setIsAnimating(true)
+    
+    setTimeout(() => {
+      setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length)
+      setIsAnimating(false)
+    }, 600)
   }
 
   const handleDotClick = (dotIndex: number) => {
-    setDirection(dotIndex > currentImageIndex ? 'right' : 'left')
-    setCurrentImageIndex(dotIndex)
+    if (isAnimating || dotIndex === currentImageIndex) return
+    setDirection(dotIndex > currentImageIndex ? 'next' : 'prev')
+    setIsAnimating(true)
+    
+    setTimeout(() => {
+      setCurrentImageIndex(dotIndex)
+      setIsAnimating(false)
+    }, 600)
   }
 
   const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(0) // Reset touch end
+    setTouchEnd(0)
     setTouchStart(e.targetTouches[0].clientX)
   }
 
@@ -65,75 +83,130 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
     }
   }
 
+  // Calculate card positions in the stack
+  const getCardStyle = (imgIndex: number) => {
+    const position = imgIndex - currentImageIndex
+    const totalCards = project.images.length
+    
+    // Normalize position to handle circular array
+    let normalizedPos = position
+    if (position > totalCards / 2) {
+      normalizedPos = position - totalCards
+    } else if (position < -totalCards / 2) {
+      normalizedPos = position + totalCards
+    }
+
+    // Base styles
+    let style: React.CSSProperties = {
+      transformStyle: 'preserve-3d',
+      transition: isAnimating ? 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)' : 'all 0.4s ease-out',
+    }
+
+    if (normalizedPos === 0) {
+      // Active card - front and center
+      style = {
+        ...style,
+        transform: isAnimating && direction === 'next' 
+          ? 'translateX(120%) translateY(-20%) scale(0.85) rotateY(-15deg) rotateZ(5deg)'
+          : isAnimating && direction === 'prev'
+          ? 'translateX(-120%) translateY(-20%) scale(0.85) rotateY(15deg) rotateZ(-5deg)'
+          : 'translateX(0) translateY(0) scale(1) rotateY(0deg) rotateZ(0deg)',
+        zIndex: 50,
+        opacity: isAnimating ? 0 : 1,
+        filter: 'brightness(1) blur(0px)',
+      }
+    } else if (normalizedPos === 1) {
+      // Next card - slightly to the right
+      style = {
+        ...style,
+        transform: isAnimating && direction === 'next'
+          ? 'translateX(0) translateY(0) scale(1) rotateY(0deg) rotateZ(0deg)'
+          : 'translateX(20%) translateY(8%) scale(0.92) rotateY(-8deg) rotateZ(-3deg)',
+        zIndex: 40,
+        opacity: isAnimating && direction === 'next' ? 1 : 0.7,
+        filter: 'brightness(0.9) blur(1px)',
+      }
+    } else if (normalizedPos === -1) {
+      // Previous card - slightly to the left
+      style = {
+        ...style,
+        transform: isAnimating && direction === 'prev'
+          ? 'translateX(0) translateY(0) scale(1) rotateY(0deg) rotateZ(0deg)'
+          : 'translateX(-20%) translateY(8%) scale(0.92) rotateY(8deg) rotateZ(3deg)',
+        zIndex: 40,
+        opacity: isAnimating && direction === 'prev' ? 1 : 0.7,
+        filter: 'brightness(0.9) blur(1px)',
+      }
+    } else if (normalizedPos === 2) {
+      // Second next card
+      style = {
+        ...style,
+        transform: 'translateX(35%) translateY(16%) scale(0.84) rotateY(-12deg) rotateZ(-5deg)',
+        zIndex: 30,
+        opacity: 0.5,
+        filter: 'brightness(0.8) blur(2px)',
+      }
+    } else if (normalizedPos === -2) {
+      // Second previous card
+      style = {
+        ...style,
+        transform: 'translateX(-35%) translateY(16%) scale(0.84) rotateY(12deg) rotateZ(5deg)',
+        zIndex: 30,
+        opacity: 0.5,
+        filter: 'brightness(0.8) blur(2px)',
+      }
+    } else if (normalizedPos > 2) {
+      // Far right cards
+      style = {
+        ...style,
+        transform: 'translateX(50%) translateY(24%) scale(0.76) rotateY(-15deg) rotateZ(-8deg)',
+        zIndex: 20,
+        opacity: 0.3,
+        filter: 'brightness(0.7) blur(3px)',
+      }
+    } else {
+      // Far left cards
+      style = {
+        ...style,
+        transform: 'translateX(-50%) translateY(24%) scale(0.76) rotateY(15deg) rotateZ(8deg)',
+        zIndex: 20,
+        opacity: 0.3,
+        filter: 'brightness(0.7) blur(3px)',
+      }
+    }
+
+    return style
+  }
+
   return (
     <div
-      className={`flex flex-col gap-8 lg:flex-row lg:items-center ${
+      className={`flex flex-col gap-36 lg:flex-row lg:items-center ${
         isEven ? "" : "lg:flex-row-reverse"
       }`}
     >
-      {/* Project visual - Interactive Image Gallery */}
+      {/* Project visual - Stacked Card Carousel */}
       <div className="flex-1">
-        <div className="group relative overflow-hidden rounded-xl border border-border bg-card">
+        <div className="group relative overflow-visible rounded-xl">
           <div 
-            className="relative aspect-video bg-muted/50 select-none"
+            className="relative aspect-video select-none"
+            style={{ perspective: '1200px' }}
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
           >
-            {/* Stacked images container */}
-            <div className="relative h-full w-full p-4 perspective-1000">
+            {/* Card stack container */}
+            <div className="relative h-full w-full">
               {project.images.map((image, imgIndex) => {
-                const offset = imgIndex - currentImageIndex
+                const cardStyle = getCardStyle(imgIndex)
                 const isActive = imgIndex === currentImageIndex
-                const isPrev = offset === -1 || (currentImageIndex === 0 && imgIndex === project.images.length - 1)
-                const isNext = offset === 1 || (currentImageIndex === project.images.length - 1 && imgIndex === 0)
-                
-                // Calculate z-index and transformations for 3D stack effect
-                let zIndex = 0
-                let transform = ''
-                let opacity = 0
-                let filter = ''
-                
-                if (isActive) {
-                  zIndex = 30
-                  transform = 'translateX(0) translateZ(0) scale(1) rotateY(0deg)'
-                  opacity = 1
-                  filter = 'blur(0px) brightness(1)'
-                } else if (isPrev) {
-                  zIndex = 20
-                  transform = 'translateX(-15%) translateZ(-40px) scale(0.88) rotateY(28deg)'
-                  opacity = 0.6
-                  filter = 'blur(1px) brightness(0.85)'
-                } else if (isNext) {
-                  zIndex = 20
-                  transform = 'translateX(15%) translateZ(-40px) scale(0.88) rotateY(-28deg)'
-                  opacity = 0.6
-                  filter = 'blur(1px) brightness(0.85)'
-                } else if (offset < -1 || (currentImageIndex === 0 && imgIndex > 1)) {
-                  zIndex = 10
-                  transform = 'translateX(-25%) translateZ(-80px) scale(0.75) rotateY(35deg)'
-                  opacity = 0.3
-                  filter = 'blur(2px) brightness(0.7)'
-                } else {
-                  zIndex = 10
-                  transform = 'translateX(25%) translateZ(-80px) scale(0.75) rotateY(-35deg)'
-                  opacity = 0.3
-                  filter = 'blur(2px) brightness(0.7)'
-                }
 
                 return (
                   <div
                     key={imgIndex}
-                    className="absolute inset-0 transition-all duration-700 ease-out"
-                    style={{
-                      zIndex,
-                      transform,
-                      opacity,
-                      filter,
-                      transformStyle: 'preserve-3d',
-                    }}
+                    className="absolute inset-0 will-change-transform"
+                    style={cardStyle}
                   >
-                    <div className="relative h-full w-full overflow-hidden rounded-lg border border-border/50 bg-background shadow-2xl">
+                    <div className="relative h-full w-full overflow-hidden rounded-xl border-2 border-border bg-card shadow-2xl">
                       <Image
                         src={image}
                         alt={`${title} - Screenshot ${imgIndex + 1}`}
@@ -142,17 +215,22 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                         sizes="(max-width: 768px) 100vw, 50vw"
                         priority={imgIndex === 0}
                       />
-                      {/* Number badge on active image */}
+                      
+                      {/* Gradient overlay for better badge visibility */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-transparent pointer-events-none" />
+                      
+                      {/* Number badge on active card */}
                       {isActive && (
-                        <div className="absolute left-4 top-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/95 text-primary-foreground shadow-lg backdrop-blur-sm animate-in fade-in zoom-in duration-500">
-                          <span className="text-lg font-bold font-mono">
+                        <div className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary shadow-2xl backdrop-blur-sm animate-in fade-in zoom-in duration-500">
+                          <span className="text-xl font-bold font-mono text-primary-foreground">
                             {String(index + 1).padStart(2, "0")}
                           </span>
                         </div>
                       )}
+                      
                       {/* Image counter */}
                       {isActive && project.images.length > 1 && (
-                        <div className="absolute right-4 top-4 rounded-lg bg-background/95 px-3 py-1.5 text-xs font-medium backdrop-blur-sm">
+                        <div className="absolute right-6 top-6 rounded-xl bg-black/60 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md">
                           {imgIndex + 1} / {project.images.length}
                         </div>
                       )}
@@ -162,38 +240,41 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               })}
             </div>
 
-            {/* Navigation arrows - hidden on touch devices */}
+            {/* Navigation arrows */}
             {project.images.length > 1 && (
               <>
                 <button
                   onClick={handlePrevImage}
-                  className="absolute left-4 top-1/2 z-40 hidden -translate-y-1/2 rounded-full bg-background/90 p-2.5 shadow-xl backdrop-blur-sm transition-all hover:bg-background hover:scale-110 active:scale-95 md:block"
+                  disabled={isAnimating}
+                  className="absolute -left-6 top-1/2 z-50 -translate-y-1/2 rounded-full bg-background p-3 shadow-xl transition-all hover:bg-accent hover:scale-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed border-2 border-border"
                   aria-label="Previous image"
                 >
-                  <ChevronLeft className="h-5 w-5" />
+                  <ChevronLeft className="h-6 w-6" />
                 </button>
                 <button
                   onClick={handleNextImage}
-                  className="absolute right-4 top-1/2 z-40 hidden -translate-y-1/2 rounded-full bg-background/90 p-2.5 shadow-xl backdrop-blur-sm transition-all hover:bg-background hover:scale-110 active:scale-95 md:block"
+                  disabled={isAnimating}
+                  className="absolute -right-6 top-1/2 z-50 -translate-y-1/2 rounded-full bg-background p-3 shadow-xl transition-all hover:bg-accent hover:scale-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed border-2 border-border"
                   aria-label="Next image"
                 >
-                  <ChevronRight className="h-5 w-5" />
+                  <ChevronRight className="h-6 w-6" />
                 </button>
               </>
             )}
 
             {/* Dot indicators */}
             {project.images.length > 1 && (
-              <div className="absolute bottom-4 left-1/2 z-40 flex -translate-x-1/2 gap-2 rounded-full bg-background/60 px-3 py-2 backdrop-blur-sm">
+              <div className="absolute -bottom-12 left-1/2 z-50 flex -translate-x-1/2 gap-2.5 rounded-full bg-background/80 px-4 py-3 backdrop-blur-md border border-border shadow-lg">
                 {project.images.map((_, dotIndex) => (
                   <button
                     key={dotIndex}
                     onClick={() => handleDotClick(dotIndex)}
-                    className={`h-2 rounded-full transition-all ${
+                    disabled={isAnimating}
+                    className={`h-2.5 rounded-full transition-all ${
                       dotIndex === currentImageIndex
-                        ? "w-8 bg-primary"
-                        : "w-2 bg-foreground/30 hover:bg-foreground/50"
-                    }`}
+                        ? "w-10 bg-primary"
+                        : "w-2.5 bg-muted-foreground/40 hover:bg-muted-foreground/60"
+                    } disabled:cursor-not-allowed`}
                     aria-label={`Go to image ${dotIndex + 1}`}
                   />
                 ))}
@@ -202,19 +283,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
             {/* Swipe hint for mobile */}
             {project.images.length > 1 && (
-              <div className="absolute left-1/2 top-4 z-40 -translate-x-1/2 rounded-full bg-background/60 px-3 py-1.5 text-xs text-muted-foreground backdrop-blur-sm md:hidden">
-                Swipe to browse
+              <div className="absolute left-1/2 -bottom-12 z-50 -translate-x-1/2 text-xs text-muted-foreground md:hidden">
+                ← Swipe →
               </div>
             )}
           </div>
-
-          {/* Hover overlay */}
-          <div className="absolute inset-0 bg-primary/5 opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none" />
         </div>
       </div>
 
       {/* Project info */}
-      <div className="flex flex-1 flex-col gap-4">
+      <div className="flex flex-1 flex-col gap-4 mt-8 lg:mt-0">
         <div className="flex items-center gap-3">
           <span className="font-mono text-sm text-primary">
             {String(index + 1).padStart(2, "0")}

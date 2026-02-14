@@ -12,6 +12,7 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/animated-section"
+import { ProjectGallery } from "./project-gallery"
 import type { Project } from "@/content/projects"
 import { useTranslation } from "@/lib/i18n/context"
 
@@ -111,24 +112,11 @@ export function ProjectDetail({
         </div>
       </section>
 
-      {/* Project visual */}
+      {/* Project Gallery */}
       <section className="px-6 pb-16">
         <div className="mx-auto max-w-4xl">
           <AnimatedSection delay={100}>
-            <div className="overflow-hidden rounded-xl border border-border bg-card">
-              <div className="flex aspect-video items-center justify-center bg-muted/30 p-12">
-                <div className="flex flex-col items-center gap-4 text-center">
-                  <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <span className="text-3xl font-bold font-mono">
-                      {title.charAt(0)}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    {t("projectDetail.screenshotPlaceholder")}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ProjectGallery images={project.images} projectTitle={title} />
           </AnimatedSection>
         </div>
       </section>

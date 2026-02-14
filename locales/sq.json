@@ -187,64 +187,101 @@
     "screenshotPlaceholder": "Pamje e projektit"
   },
   "projects": {
-    "e-commerce-platform": {
-      "title": "Platforma E-Commerce",
-      "shortDescription": "Nje faqe e plote e-commerce me listime produktesh, funksionalitet karroce dhe permbajtje te drejtuar nga CMS.",
-      "longDescription": "Ndertova nje pervoje te plote e-commerce me kataloge dinamike produktesh, faqe individuale produktesh me media te pasur, funksionalitet karroce blerje dhe permbajtje te menaxhuar nga CMS. Platforma u dizajnua per shkallezueshmeri me routing miqesor per SEO dhe faqosje responsive qe funksionon pa probleme ne te gjitha pajisjet.",
-      "problem": "Klienti kishte nevoje per nje zgjidhje moderne e-commerce me ngarkim te shpejte qe mund te perditesohej lehtesisht nga anetaret jo-teknike te ekipit duke ruajtur performancen e shkellqyer dhe renditjen ne SEO.",
-      "solution": "Perdora Next.js per renderimin ne server dhe gjenerimin statik, te kombinuar me Sanity CMS per menaxhimin e permbajtjes. Kjo i dha ekipit kontroll te plote mbi listimet, pershkrimet dhe median duke siguruar ngarkim te shpejte te faqeve dhe dukshmeri te shkellqyer ne motoret e kerkimit.",
-      "role": "Zhvillues Frontend",
-      "highlights": [
-        "Katalog dinamik produktesh me filtrim dhe kerkim",
-        "Permbajtje e menaxhuar nga CMS per perditesime te lehta",
-        "UI responsive i optimizuar per celular dhe desktop",
-        "Routing dhe metadata miqesore per SEO",
-        "Strukture faqesh e shkallezueshme per rritje"
-      ]
-    },
     "carpentry-business-website": {
-      "title": "Faqja e Biznesit te Zdrukthtarise",
-      "shortDescription": "Nje faqe profesionale biznesi per nje kompani zdrukthtarie qe shfaq sherbimet, projektet dhe nxit konvertimet.",
-      "longDescription": "Dizajnova dhe zhvillova nje faqe profesionale biznesi per nje kompani zdrukthtarie, e fokusuar ne shfaqjen e zejtarise, sherbimeve dhe projekteve te perfunduara. Faqja u ndertua per te nxitur kerkesa dhe per te vendosur besueshmeri me nje dizajn te paster dhe profesional.",
-      "problem": "Biznesi i zdrukthtarise kishte nevoje per nje pranine online qe do te shfaqte cilesine e punes se tyre, do te listonte sherbimet qarte dhe do te konvertonte vizitoret ne kontakte permes formave efektive.",
-      "solution": "Krijova nje faqe statike me ngarkim te shpejte me Next.js, me nje seksion galerie te bukur, faqe te detajuara sherbimesh dhe forma kontakti te vendosura strategjikisht. Tailwind CSS siguroi nje dizajn te lemerishem dhe konsistent.",
-      "role": "Zhvillues Frontend",
+      "title": "Almer – Website për Biznes Zdrukthtarie",
+      "shortDescription": "Projekti im i parë i plotë, i ndërtuar tërësisht me JavaScript për një biznes real.",
+      "longDescription": "Almer ishte projekti im i parë i plotë dhe ai ku mësova realisht si të ndërtoj një website nga fillimi deri në fund. E zhvillova të gjithë vetë dhe është ndërtuar vetëm me JavaScript, pa TypeScript. Ky projekt më mësoi të mendoj si zhvillues duke zgjidhur probleme reale biznesi, jo thjesht duke ndjekur tutoriale.",
+      "problem": "Biznesi kishte nevojë për një prezencë online profesionale dhe të thjeshtë për të prezantuar shërbimet dhe punimet e mëparshme.",
+      "solution": "Ndërtova një website të pastër dhe responsive duke përdorur JavaScript modern dhe Next.js, me fokus në performancë, qartësi dhe përdorshmëri për çdo pajisje.",
+      "role": "Frontend Developer",
       "highlights": [
-        "Faqe sherbimesh me pershkrime te detajuara",
-        "Seksion galerie dhe portfolioje",
-        "Forma kontakti per gjenerimin e kontakteve",
-        "Dizajn UI/UX i fokusuar ne biznes",
-        "Faqe statike me ngarkim te shpejte"
+        "Projekti im i parë end-to-end",
+        "Ndërtuar tërësisht me JavaScript",
+        "Projekt për biznes real",
+        "Responsive për mobile dhe desktop",
+        "Përvojë shumë e fortë mësimore"
       ]
     },
+
+    "cyber-security-blog": {
+      "title": "0wnit – Blog për Cyber Security",
+      "shortDescription": "Platformë blogu për cyber security me dizajn të personalizuar dhe CMS.",
+      "longDescription": "0wnit është projekti ku u fokusova maksimalisht te dizajni. Çdo komponent është dizajnuar dhe ndërtuar nga unë. Platforma funksionon si blog ku postimet krijohen dhe menaxhohen përmes Sanity CMS, duke kombinuar dizajn modern me fleksibilitet.",
+      "problem": "Shumë blogje për cyber security duken të zakonshme dhe nuk i kushtojnë rëndësi dizajnit dhe përvojës së përdoruesit.",
+      "solution": "Ndërtova një sistem komponentësh nga zero dhe e lidha me Sanity CMS, duke krijuar një blog të shpejtë, modern dhe vizualisht të dallueshëm.",
+      "role": "Frontend Developer & UI Designer",
+      "highlights": [
+        "Dizajn i plotë nga zero",
+        "Menaxhim përmbajtjeje me Sanity CMS",
+        "Fokus i fortë në UX",
+        "Dizajn modern dhe i pastër",
+        "Një nga projektet e mia më të forta vizualisht"
+      ]
+    },
+
+    "ai-learning-platform": {
+      "title": "Knowledge Flow – Platformë Mësimi me AI",
+      "shortDescription": "Platformë mësimore me AI, e ndërtuar për një hackathon.",
+      "longDescription": "Knowledge Flow u ndërtua gjatë një hackathoni, me fokus përdorimin e AI për të përmirësuar përvojën e të mësuarit. Implementova integrimin me OpenAI API dhe u fokusova në ndërveprim dhe zhvillim të shpejtë.",
+      "problem": "Platformat tradicionale të mësimit shpesh nuk ofrojnë personalizim dhe feedback në kohë reale.",
+      "solution": "Përmes integrimit të AI, platforma ofron asistencë dinamike dhe sugjerime mësimore, duke treguar potencialin e AI në edukim.",
+      "role": "Frontend Developer",
+      "highlights": [
+        "Projekt hackathoni",
+        "Integrim me OpenAI API",
+        "Zhvillim i shpejtë",
+        "Eksperimentim me AI",
+        "Fokus në ndërveprim me përdoruesin"
+      ]
+    },
+
+    "ai-next-earth": {
+      "title": "Next Earth – Platformë Vullnetarizmi me AI",
+      "shortDescription": "Platformë që përdor AI për të gjetur mundësi vullnetarizmi.",
+      "longDescription": "Next Earth u ndërtua për një hackathon dhe synon të ndihmojë përdoruesit të gjejnë mundësi vullnetarizmi përmes AI. Kombinova OpenAI API me dataset-e reale për të krijuar rekomandime kuptimplota.",
+      "problem": "Gjetja e mundësive të duhura për vullnetarizëm shpesh është e vështirë dhe jo e personalizuar.",
+      "solution": "Duke përdorur AI dhe të dhëna reale, platforma sugjeron role vullnetarizmi që përputhen më mirë me interesat e përdoruesit.",
+      "role": "Frontend Developer",
+      "highlights": [
+        "Projekt hackathoni",
+        "Rekomandime me AI",
+        "Integrim me OpenAI API",
+        "Përdorim i dataset-eve",
+        "Ndikim real social"
+      ]
+    },
+
     "back-office-dashboard": {
-      "title": "Paneli i Zyres se Pasme",
-      "shortDescription": "Nje sistem i brendshem i zyres se pasme per menaxhimin e permbajtjes, te dhenave te biznesit dhe operacioneve ditore.",
-      "longDescription": "Ndertova nje panel administrimi te brendshem per menaxhimin e permbajtjes, te dhenave dhe operacioneve te biznesit. Sistemi ka tabela te dhenash, forma per menaxhimin e permbajtjes dhe nje arkitekture modulare te dizajnuar per zgjerim.",
-      "problem": "Ekipi kishte nevoje per nje vegle te brendshme per te menaxhuar permbajtjen, gjurmuar te dhenat e biznesit dhe thjeshtezuar operacionet ditore pa u mbeshtetur ne spreadsheets ose procese manuale.",
-      "solution": "Zhvillova nje panel modular React me integrimin e Sanity CMS, duke ofruar menaxhim te strukturuar te te dhenave, navigim te qarte dhe pamje bazuar ne role. Arkitektura e komponenteve siguron mirembajtje te lehte dhe shtim te vecorive.",
-      "role": "Zhvillues Frontend",
+      "title": "Back Office Dashboard",
+      "shortDescription": "Aplikacion back office i ndërtuar për të mësuar Angular.",
+      "longDescription": "Ky projekt u ndërtua për të mësuar Angular dhe mënyrën se si strukturohen aplikacionet e mëdha. U fokusova në komponentë, forma, routing dhe struktura tipike për admin dashboards.",
+      "problem": "Kalimi nga aplikacione të thjeshta në sisteme komplekse admin është sfidues për shumë zhvillues.",
+      "solution": "Duke ndërtuar një back office nga zero, mësova arkitekturë Angular, menaxhim të formave dhe ndarje logjike të aplikacionit.",
+      "role": "Frontend Developer",
       "highlights": [
-        "Panel administrimi me UI te paster",
-        "Tabela te dhenash dhe forma menaxhimi",
-        "Kontroll i permbajtjes i fuqizuar nga CMS",
-        "Arkitekture modulare komponentesh",
-        "Sistem navigimi i strukturuar"
+        "Projekt mësimor për Angular",
+        "Arkitekturë me komponentë",
+        "Forma dhe menaxhim të dhënash",
+        "UI tipike admin",
+        "Bazë e fortë për aplikacione enterprise"
       ]
     },
-    "multi-page-business-website": {
-      "title": "Faqe Biznesi me Shume Faqe",
-      "shortDescription": "Nje faqe biznesi ne shkalle te madhe me 20+ faqe, navigim te strukturuar dhe permbajtje te mbeshtetur nga CMS.",
-      "longDescription": "Arkitektova dhe ndertova nje faqe biznesi ne shkalle te madhe me mbi 20 faqe me navigim te strukturuar, planifikim SEO dhe menaxhim permbajtjeje te mbeshtetur nga CMS. Projekti kerkonte planifikim te kujdesshem te arkitektures se informacionit dhe routing te shkallezueshem.",
-      "problem": "Biznesi kerkonte nje faqe gjitheperfshirese me shume faqe qe mbulonin sherbime te ndryshme, vendndodhje dhe seksione informacioni, te gjitha me nevoje per mirembajtje te lehte dhe optimizim per SEO.",
-      "solution": "Perdora Next.js me Sanity CMS per te krijuar nje faqe te shkallezueshme te menaxhuar nga permbajtja. Komponentet e riperdorshme te faqosjes dhe nje strukture e qarte routing e bene faqen te lehte per tu mirembajtuar dhe zgjeruar, ndersa struktura e gatshme per SEO siguroi dukshmeri te forte ne kerkim.",
-      "role": "Zhvillues Frontend",
+
+    "e-commerce-platform": {
+      "title": "Auren – Platformë E-Commerce",
+      "shortDescription": "Platformë e plotë e-commerce me shumë integrime dhe funksionalitete.",
+      "longDescription": "Auren është projekti im më kompleks. Përfshin dyqan të plotë online, profile përdoruesish, wishlist, porosi, analitika dhe një back office të plotë për menaxhim. Është ndërtuar si një sistem real production-level.",
+      "problem": "Ndërtimi i një platforme e-commerce reale kërkon menaxhim kompleks të përdoruesve, porosive, email-eve dhe përmbajtjes.",
+      "solution": "Përdora Next.js për performancë, Sanity CMS për menaxhim përmbajtjeje, database për përdorues dhe porosi, dhe email integrime për njoftime. Back office lejon menaxhim të plotë të sistemit.",
+      "role": "Frontend Developer",
       "highlights": [
-        "Mbi 20 faqe me navigim te strukturuar",
-        "Faqe te menaxhuara nga CMS per perditesime te lehta",
-        "Arkitekture routing e shkallezueshme",
-        "Strukture e gatshme per SEO dhe metadata",
-        "Komponente faqosjeje te riperdorshme"
+        "Dyqan i plotë online",
+        "Autentikim dhe profile përdoruesish",
+        "Wishlist dhe menaxhim porosish",
+        "CMS për produkte dhe përmbajtje",
+        "Back office për analitika",
+        "Email për status porosish",
+        "Projekti im më i avancuar"
       ]
     }
   },

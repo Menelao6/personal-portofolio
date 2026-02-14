@@ -11,7 +11,7 @@
   "hero": {
     "badge": "Available for work",
     "greeting": "Hi, I'm",
-    "description": "I build modern, responsive web applications with clean UI, real-world business logic, and scalable architecture. Focused on React, Next.js, and component-driven design.",
+    "description": "I build modern, responsive web applications with clean UI, real-world business logic, and scalable architecture. Focused on React, Angular and Next.js, and component-driven design.",
     "cta": {
       "contact": "Get in Touch",
       "cv": "View CV"

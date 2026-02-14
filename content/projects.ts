@@ -16,8 +16,8 @@ export const projects: Project[] = [
     tech: ["React", "Next.js", "JavaScript", "Sanity CMS", "CSS3", "Vercel"],
     year: "2024",
     images: [
-        "/projects/e-commerce-platform/1.png",
-        "/projects/e-commerce-platform/2.png",
+      "/assets/Screenshot_1.png",
+      "/assets/Screenshot_2.png",
     ],
     liveUrl: "#",
     repoUrl: "#",
@@ -49,4 +49,5 @@ export const projects: Project[] = [
     liveUrl: "#",
     repoUrl: "#",
   },
+  
 ]

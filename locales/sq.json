@@ -1,0 +1,277 @@
+{
+  "nav": {
+    "home": "Kryefaqja",
+    "about": "Rreth Meje",
+    "devTools": "Vegla Zhvillimi"
+  },
+  "footer": {
+    "role": "Zhvillues Frontend",
+    "rights": "Te gjitha te drejtat e rezervuara."
+  },
+  "hero": {
+    "badge": "I disponueshem per pune",
+    "greeting": "Pershendetje, une jam",
+    "description": "Ndertoj aplikacione moderne dhe responsive me nderfaqe te pasterta, logjike reale biznesi dhe arkitekture te shkallezueshme. I fokusuar ne React, Next.js dhe dizajn te drejtuar nga komponentet.",
+    "cta": {
+      "contact": "Na Kontaktoni",
+      "cv": "Shiko CV-ne"
+    },
+    "roles": [
+      "Zhvillues Frontend",
+      "Specialist React",
+      "Ndertues Next.js",
+      "Inxhinier UI"
+    ]
+  },
+  "featuredProjects": {
+    "label": "Punet e Zgjedhura",
+    "title": "Projektet qe kam ndertuar",
+    "subtitle": "Nje perzgjedhje e aplikacioneve web, paneleve dhe faqeve te biznesit qe tregojne aftesite e mia ne zhvillimin frontend."
+  },
+  "projectCard": {
+    "viewDetails": "Shiko Detajet",
+    "live": "Live",
+    "code": "Kodi"
+  },
+  "aboutPreview": {
+    "label": "Rreth Meje",
+    "title": "Kthimi i ideve ne nderfaqe",
+    "p1": "Zhvillues frontend me pervoje praktike ne ndertimin e aplikacioneve web, paneleve, platformave e-commerce dhe faqeve te biznesit. Fokusuar ne shkrimin e kodit te paster, te mirembajteshem dhe ne krijimin e pervojave intuitive.",
+    "p2": "I rehat duke punuar ne menyre te pavarur, duke perkthyer nevojat e biznesit ne nderfaqe funksionale dhe duke ofruar zgjidhje te plota frontend.",
+    "stats": {
+      "projects": "Projekte te Perfunduara",
+      "years": "Vite Mesimi",
+      "focus": "Fokusi Kryesor"
+    }
+  },
+  "process": {
+    "label": "Procesi Im",
+    "title": "Si punoj",
+    "subtitle": "Nje qasje e thjeshtezuar nga koncepti ne shperndarje, duke siguruar cilesine ne cdo faze.",
+    "stepLabel": "Hapi",
+    "steps": [
+      {
+        "title": "Zbuloj",
+        "description": "Kuptimi i nevojave te biznesit, audiencës se synuar dhe qellimeve te projektit per te krijuar nje baze solide."
+      },
+      {
+        "title": "Dizajnoj",
+        "description": "Planifikimi i struktures se UI, arkitektures se komponenteve dhe rrjedhave te perdoruesit per nje pervoje intuitive."
+      },
+      {
+        "title": "Ndertoj",
+        "description": "Shkrimi i kodit te paster dhe te shkallezueshem me React dhe Next.js, i fokusuar ne performancen dhe praktikat me te mira."
+      },
+      {
+        "title": "Shperndaj",
+        "description": "Testimi, optimizimi dhe shperndarja e aplikacionit me CI/CD per nje lansim te qete ne prodhim."
+      }
+    ]
+  },
+  "pagePreviews": {
+    "label": "Eksploro Me Shume",
+    "title": "Me shume per te zbuluar",
+    "items": [
+      {
+        "title": "Certifikatat & CV",
+        "description": "Shikoni certifikatat e mia profesionale, kronologjine e pervojes dhe shkarkoni CV-ne time. Merrni pamjen e plote te sfondimit tim.",
+        "buttonLabel": "Shiko Rreth Meje"
+      },
+      {
+        "title": "Vegla Zhvillimi",
+        "description": "Nje koleksion veglash te dobishme qe ndertova: konvertues ngjyrash, gjenerues gradientesh dhe pamje e drejtperdrejte e kodit.",
+        "buttonLabel": "Eksploro Veglat"
+      }
+    ]
+  },
+  "aboutHero": {
+    "badge": "I disponueshem per mundesi",
+    "title": "Rreth",
+    "bio": "Zhvillues frontend me pervoje praktike ne ndertimin e aplikacioneve web, paneleve, platformave e-commerce dhe faqeve te biznesit. Fokus i forte ne React, JavaScript modern, UI te drejtuar nga komponentet dhe sisteme te mbeshtetur nga CMS.",
+    "location": "I disponueshem ne distance",
+    "downloadCv": "Shkarko CV-ne"
+  },
+  "experience": {
+    "label": "Pervoja",
+    "title": "Sfondi profesional",
+    "items": [
+      {
+        "title": "Zhvillues Frontend",
+        "company": "Freelance / Projekte Personale",
+        "type": "Freelance",
+        "description": "Dizajnimi dhe zhvillimi i aplikacioneve te plota frontend. Krijimi i komponenteve te riperdorshme te UI, lidhja e frontend me CMS dhe sherbimet backend, implementimi i autentifikimit, formave, paneleve dhe veglave te administrimit. Strukture miqesore per SEO dhe faqosje responsive."
+      },
+      {
+        "title": "Specialist i Mbeshtjes Teknike",
+        "company": "Rol Profesional",
+        "type": "Kohe e plote",
+        "description": "Zgjidhja e problemeve te softuerit dhe sistemit, komunikimi i zgjidhjeve teknike per perdoruesit jo-teknike, diagnostikimi i problemeve te frontend dhe nivelit te sistemit, puna nen presion me perdorues dhe kufizime reale."
+      }
+    ]
+  },
+  "skills": {
+    "label": "Aftesite",
+    "title": "Paketa teknike",
+    "categories": {
+      "frontend": "Frontend",
+      "styling": "Stilizimi",
+      "stateData": "Gjendja & Te Dhenat",
+      "tools": "Veglat & Rrjedha e Punes"
+    }
+  },
+  "certificates": {
+    "label": "Certifikimet",
+    "title": "Certifikimet profesionale",
+    "issuedBy": "Leshuar nga",
+    "completedCourses": "Kurset e Perfunduara"
+  },
+  "contact": {
+    "label": "Kontakti",
+    "title": "Le te punojme se bashku",
+    "subtitle": "Keni nje projekt ne mendje ose thjesht doni te bisedoni? Do te deshiroja te degjoja nga ju. Plotesoni formularin ose na kontaktoni permes kanaleve me poshte.",
+    "form": {
+      "name": "Emri",
+      "namePlaceholder": "Emri juaj",
+      "email": "Email",
+      "emailPlaceholder": "ju@shembull.com",
+      "message": "Mesazhi",
+      "messagePlaceholder": "Na tregoni per projektin tuaj...",
+      "send": "Dergo Mesazhin",
+      "sending": "Duke derguar...",
+      "success": "Mesazhi u dergua! Do t'ju pergjigjem se shpejti."
+    }
+  },
+  "tools": {
+    "label": "Vegla Zhvillimi",
+    "title": "Vegla te dobishme per zhvillues",
+    "subtitle": "Nje koleksion veglash te dobishme qe ndertova per zhvillimin e perditshem. Zgjidhni nje vegle me poshte dhe filloni ta perdorni.",
+    "tabs": {
+      "color": "Konvertues Ngjyrash",
+      "gradient": "Gjenerues Gradientesh",
+      "code": "Pamje e Kodit"
+    },
+    "color": {
+      "title": "Konvertues Ngjyrash",
+      "nameToHex": "Emer ne Hex",
+      "hexToName": "Hex ne Emer",
+      "placeholderName": "Shkruani emrin e ngjyres (p.sh., coral)",
+      "placeholderHex": "Shkruani hex (p.sh., #FF7F50)",
+      "notFound": "Emri i ngjyres nuk u gjet",
+      "invalidHex": "Hex i pavlefshem (perdorni #RRGGBB)",
+      "closest": "Me e aferta",
+      "copied": "U kopjua ne clipboard!"
+    },
+    "gradient": {
+      "title": "Gjenerues Gradientesh",
+      "linear": "Linear",
+      "radial": "Radial",
+      "color1": "Ngjyra 1",
+      "color2": "Ngjyra 2",
+      "angle": "Kendi",
+      "cssCopied": "CSS u kopjua ne clipboard!"
+    },
+    "codePreview": {
+      "livePreview": "Pamje e Drejtperdrejte",
+      "codeCopied": "I gjithe kodi u kopjua!"
+    }
+  },
+  "projectDetail": {
+    "backToProjects": "Kthehu te projektet",
+    "theChallenge": "Sfida",
+    "theSolution": "Zgjidhja",
+    "keyHighlights": "Pikat Kryesore",
+    "liveDemo": "Demo Live",
+    "sourceCode": "Kodi Burimor",
+    "previous": "I meparshem",
+    "next": "Tjetri",
+    "screenshotPlaceholder": "Pamje e projektit"
+  },
+  "projects": {
+    "e-commerce-platform": {
+      "title": "Platforma E-Commerce",
+      "shortDescription": "Nje faqe e plote e-commerce me listime produktesh, funksionalitet karroce dhe permbajtje te drejtuar nga CMS.",
+      "longDescription": "Ndertova nje pervoje te plote e-commerce me kataloge dinamike produktesh, faqe individuale produktesh me media te pasur, funksionalitet karroce blerje dhe permbajtje te menaxhuar nga CMS. Platforma u dizajnua per shkallezueshmeri me routing miqesor per SEO dhe faqosje responsive qe funksionon pa probleme ne te gjitha pajisjet.",
+      "problem": "Klienti kishte nevoje per nje zgjidhje moderne e-commerce me ngarkim te shpejte qe mund te perditesohej lehtesisht nga anetaret jo-teknike te ekipit duke ruajtur performancen e shkellqyer dhe renditjen ne SEO.",
+      "solution": "Perdora Next.js per renderimin ne server dhe gjenerimin statik, te kombinuar me Sanity CMS per menaxhimin e permbajtjes. Kjo i dha ekipit kontroll te plote mbi listimet, pershkrimet dhe median duke siguruar ngarkim te shpejte te faqeve dhe dukshmeri te shkellqyer ne motoret e kerkimit.",
+      "role": "Zhvillues Frontend",
+      "highlights": [
+        "Katalog dinamik produktesh me filtrim dhe kerkim",
+        "Permbajtje e menaxhuar nga CMS per perditesime te lehta",
+        "UI responsive i optimizuar per celular dhe desktop",
+        "Routing dhe metadata miqesore per SEO",
+        "Strukture faqesh e shkallezueshme per rritje"
+      ]
+    },
+    "carpentry-business-website": {
+      "title": "Faqja e Biznesit te Zdrukthtarise",
+      "shortDescription": "Nje faqe profesionale biznesi per nje kompani zdrukthtarie qe shfaq sherbimet, projektet dhe nxit konvertimet.",
+      "longDescription": "Dizajnova dhe zhvillova nje faqe profesionale biznesi per nje kompani zdrukthtarie, e fokusuar ne shfaqjen e zejtarise, sherbimeve dhe projekteve te perfunduara. Faqja u ndertua per te nxitur kerkesa dhe per te vendosur besueshmeri me nje dizajn te paster dhe profesional.",
+      "problem": "Biznesi i zdrukthtarise kishte nevoje per nje pranine online qe do te shfaqte cilesine e punes se tyre, do te listonte sherbimet qarte dhe do te konvertonte vizitoret ne kontakte permes formave efektive.",
+      "solution": "Krijova nje faqe statike me ngarkim te shpejte me Next.js, me nje seksion galerie te bukur, faqe te detajuara sherbimesh dhe forma kontakti te vendosura strategjikisht. Tailwind CSS siguroi nje dizajn te lemerishem dhe konsistent.",
+      "role": "Zhvillues Frontend",
+      "highlights": [
+        "Faqe sherbimesh me pershkrime te detajuara",
+        "Seksion galerie dhe portfolioje",
+        "Forma kontakti per gjenerimin e kontakteve",
+        "Dizajn UI/UX i fokusuar ne biznes",
+        "Faqe statike me ngarkim te shpejte"
+      ]
+    },
+    "back-office-dashboard": {
+      "title": "Paneli i Zyres se Pasme",
+      "shortDescription": "Nje sistem i brendshem i zyres se pasme per menaxhimin e permbajtjes, te dhenave te biznesit dhe operacioneve ditore.",
+      "longDescription": "Ndertova nje panel administrimi te brendshem per menaxhimin e permbajtjes, te dhenave dhe operacioneve te biznesit. Sistemi ka tabela te dhenash, forma per menaxhimin e permbajtjes dhe nje arkitekture modulare te dizajnuar per zgjerim.",
+      "problem": "Ekipi kishte nevoje per nje vegle te brendshme per te menaxhuar permbajtjen, gjurmuar te dhenat e biznesit dhe thjeshtezuar operacionet ditore pa u mbeshtetur ne spreadsheets ose procese manuale.",
+      "solution": "Zhvillova nje panel modular React me integrimin e Sanity CMS, duke ofruar menaxhim te strukturuar te te dhenave, navigim te qarte dhe pamje bazuar ne role. Arkitektura e komponenteve siguron mirembajtje te lehte dhe shtim te vecorive.",
+      "role": "Zhvillues Frontend",
+      "highlights": [
+        "Panel administrimi me UI te paster",
+        "Tabela te dhenash dhe forma menaxhimi",
+        "Kontroll i permbajtjes i fuqizuar nga CMS",
+        "Arkitekture modulare komponentesh",
+        "Sistem navigimi i strukturuar"
+      ]
+    },
+    "multi-page-business-website": {
+      "title": "Faqe Biznesi me Shume Faqe",
+      "shortDescription": "Nje faqe biznesi ne shkalle te madhe me 20+ faqe, navigim te strukturuar dhe permbajtje te mbeshtetur nga CMS.",
+      "longDescription": "Arkitektova dhe ndertova nje faqe biznesi ne shkalle te madhe me mbi 20 faqe me navigim te strukturuar, planifikim SEO dhe menaxhim permbajtjeje te mbeshtetur nga CMS. Projekti kerkonte planifikim te kujdesshem te arkitektures se informacionit dhe routing te shkallezueshem.",
+      "problem": "Biznesi kerkonte nje faqe gjitheperfshirese me shume faqe qe mbulonin sherbime te ndryshme, vendndodhje dhe seksione informacioni, te gjitha me nevoje per mirembajtje te lehte dhe optimizim per SEO.",
+      "solution": "Perdora Next.js me Sanity CMS per te krijuar nje faqe te shkallezueshme te menaxhuar nga permbajtja. Komponentet e riperdorshme te faqosjes dhe nje strukture e qarte routing e bene faqen te lehte per tu mirembajtuar dhe zgjeruar, ndersa struktura e gatshme per SEO siguroi dukshmeri te forte ne kerkim.",
+      "role": "Zhvillues Frontend",
+      "highlights": [
+        "Mbi 20 faqe me navigim te strukturuar",
+        "Faqe te menaxhuara nga CMS per perditesime te lehta",
+        "Arkitekture routing e shkallezueshme",
+        "Strukture e gatshme per SEO dhe metadata",
+        "Komponente faqosjeje te riperdorshme"
+      ]
+    }
+  },
+  "certificateItems": {
+    "meta-frontend": {
+      "title": "Certifikata Profesionale e Meta Front-End",
+      "issuer": "Meta",
+      "courses": [
+        "Hyrje ne Zhvillimin Front-End",
+        "Programimi me JavaScript",
+        "Kontrolli i Versioneve",
+        "HTML dhe CSS ne Thellesi",
+        "Bazat e React",
+        "React i Avancuar",
+        "Bazat e Dizajnit UX/UI",
+        "Projekti Perfundimtar Front-End"
+      ]
+    },
+    "angular": {
+      "title": "Certifikimi Angular",
+      "issuer": "Akademia Online",
+      "courses": [
+        "Arkitektura bazuar ne komponente",
+        "Bazat e TypeScript",
+        "Modulet dhe sherbimet Angular",
+        "Routing dhe lidhja e te dhenave"
+      ]
+    }
+  }
+}

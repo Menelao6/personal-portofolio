@@ -1,0 +1,277 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "devTools": "Dev Tools"
+  },
+  "footer": {
+    "role": "Frontend Developer",
+    "rights": "All rights reserved."
+  },
+  "hero": {
+    "badge": "Available for work",
+    "greeting": "Hi, I'm",
+    "description": "I build modern, responsive web applications with clean UI, real-world business logic, and scalable architecture. Focused on React, Next.js, and component-driven design.",
+    "cta": {
+      "contact": "Get in Touch",
+      "cv": "View CV"
+    },
+    "roles": [
+      "Frontend Developer",
+      "React Specialist",
+      "Next.js Builder",
+      "UI Engineer"
+    ]
+  },
+  "featuredProjects": {
+    "label": "Featured Work",
+    "title": "Projects I have built",
+    "subtitle": "A selection of production-like web applications, dashboards, and business websites that showcase my frontend development skills."
+  },
+  "projectCard": {
+    "viewDetails": "View Details",
+    "live": "Live",
+    "code": "Code"
+  },
+  "aboutPreview": {
+    "label": "About Me",
+    "title": "Turning ideas into interfaces",
+    "p1": "Frontend developer with hands-on experience building production-like web applications, dashboards, e-commerce platforms, and business websites. I focus on writing clean, maintainable code and creating intuitive user experiences.",
+    "p2": "Comfortable working independently, translating business needs into functional interfaces, and delivering complete end-to-end frontend solutions.",
+    "stats": {
+      "projects": "Projects Delivered",
+      "years": "Years Learning",
+      "focus": "Core Focus"
+    }
+  },
+  "process": {
+    "label": "My Process",
+    "title": "How I work",
+    "subtitle": "A streamlined approach from concept to deployment, ensuring quality at every stage.",
+    "stepLabel": "Step",
+    "steps": [
+      {
+        "title": "Discover",
+        "description": "Understanding the business needs, target audience, and project goals to create a solid foundation."
+      },
+      {
+        "title": "Design",
+        "description": "Planning the UI structure, component architecture, and user flows for an intuitive experience."
+      },
+      {
+        "title": "Build",
+        "description": "Writing clean, scalable code with React and Next.js, focusing on performance and best practices."
+      },
+      {
+        "title": "Deploy",
+        "description": "Testing, optimizing, and deploying the application with CI/CD for a smooth production launch."
+      }
+    ]
+  },
+  "pagePreviews": {
+    "label": "Explore More",
+    "title": "More to discover",
+    "items": [
+      {
+        "title": "Certificates & CV",
+        "description": "View my professional certifications, experience timeline, and download my CV. Get the full picture of my background.",
+        "buttonLabel": "View About"
+      },
+      {
+        "title": "Dev Tools",
+        "description": "A collection of handy developer tools I built: color converter, gradient generator, and live code preview.",
+        "buttonLabel": "Explore Tools"
+      }
+    ]
+  },
+  "aboutHero": {
+    "badge": "Available for opportunities",
+    "title": "About",
+    "bio": "Frontend developer with hands-on experience building production-like web applications, dashboards, e-commerce platforms, and business websites. Strong focus on React, modern JavaScript, component-driven UI, and CMS-backed systems.",
+    "location": "Available Remote",
+    "downloadCv": "Download CV"
+  },
+  "experience": {
+    "label": "Experience",
+    "title": "Professional background",
+    "items": [
+      {
+        "title": "Frontend Developer",
+        "company": "Freelance / Personal Projects",
+        "type": "Freelance",
+        "description": "Designing and developing full frontend applications. Creating reusable UI components, connecting frontend to CMS and backend services, implementing authentication, forms, dashboards, and admin tools. SEO-friendly structure and responsive layouts."
+      },
+      {
+        "title": "Technical Support Specialist",
+        "company": "Professional Role",
+        "type": "Full-time",
+        "description": "Troubleshooting software and system-related issues, communicating technical solutions to non-technical users, diagnosing frontend and system-level problems, working under pressure with real users and constraints."
+      }
+    ]
+  },
+  "skills": {
+    "label": "Skills",
+    "title": "Technical toolkit",
+    "categories": {
+      "frontend": "Frontend",
+      "styling": "Styling",
+      "stateData": "State & Data",
+      "tools": "Tools & Workflow"
+    }
+  },
+  "certificates": {
+    "label": "Certifications",
+    "title": "Professional certifications",
+    "issuedBy": "Issued by",
+    "completedCourses": "Completed Courses"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's work together",
+    "subtitle": "Have a project in mind or just want to chat? I'd love to hear from you. Fill out the form or reach out through any of the channels below.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent! I'll get back to you soon."
+    }
+  },
+  "tools": {
+    "label": "Developer Tools",
+    "title": "Handy dev tools",
+    "subtitle": "A collection of useful tools I built for everyday development. Pick a tool below and start using it.",
+    "tabs": {
+      "color": "Color Converter",
+      "gradient": "Gradient Generator",
+      "code": "Code Preview"
+    },
+    "color": {
+      "title": "Color Converter",
+      "nameToHex": "Name to Hex",
+      "hexToName": "Hex to Name",
+      "placeholderName": "Enter color name (e.g., coral)",
+      "placeholderHex": "Enter hex (e.g., #FF7F50)",
+      "notFound": "Color name not found",
+      "invalidHex": "Invalid hex (use #RRGGBB)",
+      "closest": "Closest",
+      "copied": "Copied to clipboard!"
+    },
+    "gradient": {
+      "title": "Gradient Generator",
+      "linear": "Linear",
+      "radial": "Radial",
+      "color1": "Color 1",
+      "color2": "Color 2",
+      "angle": "Angle",
+      "cssCopied": "CSS copied to clipboard!"
+    },
+    "codePreview": {
+      "livePreview": "Live Preview",
+      "codeCopied": "Full code copied!"
+    }
+  },
+  "projectDetail": {
+    "backToProjects": "Back to projects",
+    "theChallenge": "The Challenge",
+    "theSolution": "The Solution",
+    "keyHighlights": "Key Highlights",
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code",
+    "previous": "Previous",
+    "next": "Next",
+    "screenshotPlaceholder": "Project screenshot placeholder"
+  },
+  "projects": {
+    "e-commerce-platform": {
+      "title": "E-Commerce Platform",
+      "shortDescription": "A full e-commerce website with product listings, cart functionality, and CMS-driven content.",
+      "longDescription": "Built a complete e-commerce experience featuring dynamic product catalogs, individual product pages with rich media, shopping cart functionality, and CMS-managed content. The platform was designed for scalability with SEO-friendly routing and responsive layouts that work seamlessly across all devices.",
+      "problem": "The client needed a modern, fast-loading e-commerce solution that could be easily updated by non-technical team members while maintaining excellent performance and SEO rankings.",
+      "solution": "Leveraged Next.js for server-side rendering and static generation, combined with Sanity CMS for content management. This gave the team full control over product listings, descriptions, and media while ensuring lightning-fast page loads and excellent search engine visibility.",
+      "role": "Frontend Developer",
+      "highlights": [
+        "Dynamic product catalog with filtering and search",
+        "CMS-managed content for easy updates",
+        "Responsive UI optimized for mobile and desktop",
+        "SEO-friendly routing and metadata",
+        "Scalable page structure for growth"
+      ]
+    },
+    "carpentry-business-website": {
+      "title": "Carpentry Business Website",
+      "shortDescription": "A professional business website for a carpentry company showcasing services, projects, and driving conversions.",
+      "longDescription": "Designed and developed a professional business website for a carpentry company, focused on showcasing their craftsmanship, services, and completed projects. The site was built to drive inquiries and establish credibility with a clean, professional design.",
+      "problem": "The carpentry business needed an online presence that would showcase their work quality, list their services clearly, and convert visitors into leads through effective contact forms.",
+      "solution": "Created a fast-loading static site with Next.js, featuring a beautiful gallery section, detailed service pages, and strategically placed contact forms. Tailwind CSS ensured a polished, consistent design throughout.",
+      "role": "Frontend Developer",
+      "highlights": [
+        "Service pages with detailed descriptions",
+        "Gallery and portfolio section",
+        "Contact forms for lead generation",
+        "Business-focused UI/UX design",
+        "Fast-loading static pages"
+      ]
+    },
+    "back-office-dashboard": {
+      "title": "Back Office Dashboard",
+      "shortDescription": "An internal back-office system for managing content, business data, and daily operations.",
+      "longDescription": "Built an internal administration dashboard for managing business content, data, and operations. The system features data tables, forms for content management, and a modular architecture designed for extensibility.",
+      "problem": "The team needed an internal tool to manage content, track business data, and streamline daily operations without relying on spreadsheets or manual processes.",
+      "solution": "Developed a modular React dashboard with Sanity CMS integration, providing structured data management, clear navigation, and role-based views. The component architecture ensures easy maintenance and feature additions.",
+      "role": "Frontend Developer",
+      "highlights": [
+        "Admin dashboard with clean UI",
+        "Data tables and management forms",
+        "CMS-powered content control",
+        "Modular component architecture",
+        "Structured navigation system"
+      ]
+    },
+    "multi-page-business-website": {
+      "title": "Multi-Page Business Website",
+      "shortDescription": "A large-scale business website with 20+ pages, structured navigation, and CMS-backed content.",
+      "longDescription": "Architected and built a large-scale business website featuring over 20 pages with structured navigation, SEO planning, and CMS-backed content management. The project required careful planning of information architecture and scalable routing.",
+      "problem": "The business required a comprehensive website with many pages covering different services, locations, and information sections, all needing to be easily maintainable and SEO-optimized.",
+      "solution": "Used Next.js with Sanity CMS to create a scalable, content-managed website. Reusable layout components and a clear routing structure made the site easy to maintain and extend, while SEO-ready structure ensured strong search visibility.",
+      "role": "Frontend Developer",
+      "highlights": [
+        "Over 20 pages with structured navigation",
+        "CMS-managed pages for easy updates",
+        "Scalable routing architecture",
+        "SEO-ready structure and metadata",
+        "Reusable layout components"
+      ]
+    }
+  },
+  "certificateItems": {
+    "meta-frontend": {
+      "title": "Meta Front-End Professional Certificate",
+      "issuer": "Meta",
+      "courses": [
+        "Introduction to Front-End Development",
+        "Programming with JavaScript",
+        "Version Control",
+        "HTML and CSS in Depth",
+        "React Basics",
+        "Advanced React",
+        "UX/UI Design Fundamentals",
+        "Front-End Capstone Project"
+      ]
+    },
+    "angular": {
+      "title": "Angular Certification",
+      "issuer": "Online Academy",
+      "courses": [
+        "Component-based architecture",
+        "TypeScript fundamentals",
+        "Angular modules & services",
+        "Routing and data binding"
+      ]
+    }
+  }
+}

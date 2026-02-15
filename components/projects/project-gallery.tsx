@@ -133,13 +133,15 @@ export function ProjectGallery({ images, projectTitle }: ProjectGalleryProps) {
             )}
 
             {/* Expand button */}
-            {/* <button
+            <button
               onClick={() => openLightbox(currentIndex)}
               className="absolute right-4 top-4 rounded-full bg-background/80 p-2.5 shadow-xl backdrop-blur-sm transition-all hover:bg-background hover:scale-110 active:scale-95 group z-10"
               aria-label="Open fullscreen"
             >
               <Maximize2 className="h-5 w-5 transition-transform group-hover:scale-110" />
-            </button> */}
+            </button>
+
+
 
             {/* Image counter */}
             {images.length > 1 && (

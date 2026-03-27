@@ -94,18 +94,59 @@
   "experience": {
     "label": "Experience",
     "title": "Professional background",
+    "subtitle": "Three chapters. One direction.",
+    "note": "The through-line across these roles: I learn by doing, I ship real things, and I move deliberately toward frontend engineering — one commit at a time.",
     "items": [
       {
-        "title": "Frontend Developer",
-        "company": "Freelance / Personal Projects",
-        "type": "Freelance",
-        "description": "Designing and developing full frontend applications. Creating reusable UI components, connecting frontend to CMS and backend services, implementing authentication, forms, dashboards, and admin tools. SEO-friendly structure and responsive layouts."
+        "id": "devx",
+        "title": "DevX Engineer",
+        "company": "B2TECH, Tirana",
+        "type": "Full-time",
+        "period": "Mar 2026 – Present",
+        "description": "Investigate and troubleshoot production issues using monitoring tools such as Cloudflare, Logz.io, Grafana, and Coralogix. Collaborate with frontend and engineering teams to debug and resolve UI-related issues across multiple environments. Work with Angular codebases to identify issues and support fixes. Maintain configuration across multiple products with brand consistency. Support release processes with coordinated changes across product, frontend, and infrastructure teams.",
+        "skills": [
+          "Cloudflare",
+          "Logz.io",
+          "Grafana",
+          "Coralogix",
+          "Angular",
+          "Config management",
+          "Release coordination"
+        ],
+        "highlight": true
       },
       {
-        "title": "Technical Support Specialist",
-        "company": "Professional Role",
+        "id": "techsupport",
+        "title": "Tech Support Engineer",
+        "company": "B2TECH, Tirana",
         "type": "Full-time",
-        "description": "Troubleshooting software and system-related issues, communicating technical solutions to non-technical users, diagnosing frontend and system-level problems, working under pressure with real users and constraints."
+        "period": "Nov 2023 – Mar 2026",
+        "description": "Investigated and resolved user-facing issues affecting frontend behavior and UI functionality. Used Cloudflare, Logz.io, and Grafana to analyze errors and identify root causes. Applied UI-related updates including localization and brand configuration. Collaborated with frontend and UX teams for consistent cross-platform behavior. Managed JSON config and translation files and tracked bugs and feature requests in Jira.",
+        "skills": [
+          "Cloudflare",
+          "Logz.io",
+          "Grafana",
+          "Jira",
+          "Localization",
+          "Brand configuration"
+        ],
+        "highlight": false
+      },
+      {
+        "id": "freelance",
+        "title": "Freelance Frontend Developer",
+        "company": "Self-Employed",
+        "type": "Freelance",
+        "period": "Mar 2025 – Present",
+        "description": "Developed web apps with React and Next.js, including API and CMS integrations. Built responsive UI components and multi-page applications with focus on performance and usability. Implemented admin dashboards and content systems with Sanity CMS. Delivered complete frontend solutions including authentication flows, dashboards, and landing pages.",
+        "skills": [
+          "React",
+          "Next.js",
+          "Sanity CMS",
+          "Responsive UI",
+          "API integrations"
+        ],
+        "highlight": false
       }
     ]
   },

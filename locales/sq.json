@@ -122,13 +122,13 @@
         "desc": "i fokusuar"
       }
     ],
-    "stack": {
-      "0": "React",
-      "1": "Next.js",
-      "2": "Angular",
-      "3": "TS",
-      "4": "Tailwind"
-    },
+    "stack": [
+      "React",
+      "Next.js",
+      "Angular",
+      "TS",
+      "Tailwind"
+    ],
     "basedIn": "Me bazë në",
     "country": "Tiranë, Shqipëri"
   },

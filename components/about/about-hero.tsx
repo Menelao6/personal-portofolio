@@ -90,7 +90,7 @@ function FloatingImage({
 }
 
 export function AboutHero() {
-  const { t } = useTranslation()
+  const { t, tObj } = useTranslation()
 
   return (
     <section className="relative px-6 py-20 overflow-hidden">
@@ -122,7 +122,7 @@ export function AboutHero() {
 
               <div>
                 <p className="font-mono text-sm text-primary mb-2 tracking-wider uppercase">
-                  {t("aboutHero.eyebrow") ?? "Frontend Developer"}
+                  {t("aboutHero.eyebrow")}
                 </p>
                 <h1 className="text-4xl font-bold text-foreground sm:text-5xl text-balance leading-[1.1]">
                   {t("aboutHero.title")}{" "}
@@ -154,11 +154,7 @@ export function AboutHero() {
 
               {/* Quick stat pills */}
               <div className="flex flex-wrap gap-2 pt-2">
-                {[
-                  { label: "2+ yrs", desc: "experience" },
-                  { label: "6 projects", desc: "shipped" },
-                  { label: "React & Next.js", desc: "focused" },
-                ].map((s) => (
+                {(tObj("aboutHero.stats") ?? []).map((s: any) => (
                   <div
                     key={s.label}
                     className="flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs"
@@ -230,7 +226,7 @@ export function AboutHero() {
                   Stack
                 </p>
                 <div className="flex flex-wrap gap-1">
-                  {["React", "Next.js", "TS", "Tailwind"].map((t) => (
+                  {(tObj("aboutHero.stack") ?? []).map((t: string) => (
                     <span
                       key={t}
                       className="rounded-md bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary"
@@ -247,10 +243,10 @@ export function AboutHero() {
                 style={{ top: "8%", right: "0%", minWidth: 140 }}
               >
                 <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
-                  Based in
+                  {t("aboutHero.basedIn")}
                 </p>
                 <p className="mt-0.5 text-sm font-semibold text-foreground">
-                  🇬🇷 Greece
+                  {t("aboutHero.country")}
                 </p>
               </div>
             </div>

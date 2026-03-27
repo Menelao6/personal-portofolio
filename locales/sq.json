@@ -94,18 +94,59 @@
   "experience": {
     "label": "Pervoja",
     "title": "Sfondi profesional",
+    "subtitle": "Tre kapituj. Një drejtim.",
+    "note": "Pika e përbashkët nëpër këto role: Mësoj duke bërë, dërgoj gjëra reale dhe lëviz me qëllim drejt inxhinierisë frontend — një commit në një kohë.",
     "items": [
       {
-        "title": "Zhvillues Frontend",
-        "company": "Freelance / Projekte Personale",
-        "type": "Freelance",
-        "description": "Dizajnimi dhe zhvillimi i aplikacioneve te plota frontend. Krijimi i komponenteve te riperdorshme te UI, lidhja e frontend me CMS dhe sherbimet backend, implementimi i autentifikimit, formave, paneleve dhe veglave te administrimit. Strukture miqesore per SEO dhe faqosje responsive."
+        "id": "devx",
+        "title": "DevX Engineer",
+        "company": "B2TECH, Tiranë",
+        "type": "Kohe e plote",
+        "period": "Mar 2026 – Prezant",
+        "description": "Hulumtim dhe zgjidhje e çështjeve prodhuese me mjetet Cloudflare, Logz.io, Grafana dhe Coralogix. Bashkëpunim me ekipet frontend dhe inxhinieri për të debugguar dhe zgjidhur probleme të UI në shumë ambiente. Puna me codebase Angular për identifikim dhe rregullime. Mirëmbajtje konfiguracionesh në produkte të ndryshme, me përputhshmëri markash. Mbështetje procesesh release midis product, frontend dhe infrastrukturë.",
+        "skills": [
+          "Cloudflare",
+          "Logz.io",
+          "Grafana",
+          "Coralogix",
+          "Angular",
+          "Konfigurim",
+          "Përkoordinim release"
+        ],
+        "highlight": true
       },
       {
-        "title": "Specialist i Mbeshtjes Teknike",
-        "company": "Rol Profesional",
+        "id": "techsupport",
+        "title": "Tech Support Engineer",
+        "company": "B2TECH, Tiranë",
         "type": "Kohe e plote",
-        "description": "Zgjidhja e problemeve te softuerit dhe sistemit, komunikimi i zgjidhjeve teknike per perdoruesit jo-teknike, diagnostikimi i problemeve te frontend dhe nivelit te sistemit, puna nen presion me perdorues dhe kufizime reale."
+        "period": "Nën 2023 – Mar 2026",
+        "description": "Hetim e zgjidhje e problemeve përdoruesore që prekën sjelljen frontend dhe funksionalitetin UI. Përdorim i Cloudflare, Logz.io dhe Grafana për analizë gabimesh dhe gjetje shkaqesh themelore. Azhurnime të UI si lokalizim dhe konfigurim marke. Bashkëpunim me ekipet frontend dhe UI/UX për konsistencë. Menaxhim i file-ve JSON për konfigurim dhe përkthime; gjurmim bugs në Jira.",
+        "skills": [
+          "Cloudflare",
+          "Logz.io",
+          "Grafana",
+          "Jira",
+          "Lokalizim",
+          "Konfigurim markë"
+        ],
+        "highlight": false
+      },
+      {
+        "id": "freelance",
+        "title": "Freelance Frontend Developer",
+        "company": "Vetë-punësim",
+        "type": "Freelance",
+        "period": "Mar 2025 – Prezant",
+        "description": "Zhvillim aplikacionesh web me React dhe Next.js, përfshirë integrime API dhe CMS. Ndërtim komponentësh UI responsive dhe aplikacione me shumë faqe me fokus në performancë dhe përdorshmëri. Implementim dashboard-esh admin dhe sisteme përmbajtjeje me Sanity CMS. Dorëzim zgjidhjesh frontend të plota me autentikim dhe rryma pune dashboards.",
+        "skills": [
+          "React",
+          "Next.js",
+          "Sanity CMS",
+          "UI responsive",
+          "Integrime API"
+        ],
+        "highlight": false
       }
     ]
   },

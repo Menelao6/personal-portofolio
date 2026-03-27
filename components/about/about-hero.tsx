@@ -6,10 +6,9 @@ import { AnimatedSection } from "@/components/animated-section"
 import { useTranslation } from "@/lib/i18n/context"
 import { useEffect, useRef } from "react"
 
-// Replace with your actual image paths
-const HERO_IMAGE = "/assets/profile-main.jpg"
-const FLOATING_IMAGE_1 = "/assets/profile-work.jpg"
-const FLOATING_IMAGE_2 = "/assets/profile-casual.jpg"
+const HERO_IMAGE = "/assets/photos/main-profile.jpeg"
+const FLOATING_IMAGE_1 = "/assets/photos/ass1.jpg"
+const FLOATING_IMAGE_2 = "/assets/photos/casual.jpeg"
 
 function FloatingImage({
   src,
@@ -178,8 +177,8 @@ export function AboutHero() {
                 alt="Menelaos — main photo"
                 className="absolute rounded-2xl overflow-hidden shadow-2xl border border-border/40"
                 style={{
-                  width: 260,
-                  height: 320,
+                  width: 290,
+                  height: 350,
                   top: "50%",
                   left: "50%",
                   marginTop: -160,
@@ -194,8 +193,8 @@ export function AboutHero() {
                 alt="Menelaos working"
                 className="absolute rounded-xl overflow-hidden border border-border/40 shadow-xl"
                 style={{
-                  width: 140,
-                  height: 160,
+                  width: 160,
+                  height: 180,
                   top: "10%",
                   left: "2%",
                   zIndex: 3,
@@ -209,8 +208,8 @@ export function AboutHero() {
                 alt="Menelaos casual"
                 className="absolute rounded-xl overflow-hidden border border-border/40 shadow-xl"
                 style={{
-                  width: 130,
-                  height: 150,
+                  width: 150,
+                  height: 165,
                   bottom: "6%",
                   right: "2%",
                   zIndex: 3,

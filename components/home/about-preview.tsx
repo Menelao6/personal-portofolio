@@ -4,13 +4,14 @@ import { AnimatedSection } from "@/components/animated-section"
 import { useTranslation } from "@/lib/i18n/context"
 
 export function AboutPreview() {
-  const { t } = useTranslation()
+  const { t, tObj } = useTranslation()
 
-  const stats = [
-    { value: "4+", label: t("aboutPreview.stats.projects") },
-    { value: "2+", label: t("aboutPreview.stats.years") },
-    { value: "React", label: t("aboutPreview.stats.focus") },
-  ]
+  const statsValue = tObj<unknown>("aboutPreview.stats")
+  const stats = Array.isArray(statsValue)
+    ? (statsValue as { value: string; label: string }[])
+    : Object.values(
+        (statsValue as Record<string, { value: string; label: string }>) ?? {}
+      )
 
   return (
     <section className="px-6 py-24 bg-muted/30">

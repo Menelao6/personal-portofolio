@@ -9,6 +9,7 @@ import { useTranslation } from "@/lib/i18n/context"
 export function Hero() {
   const { t, ta } = useTranslation()
   const roles = ta("hero.roles")
+  const techStack = ta("hero.tech")
   const [roleIndex, setRoleIndex] = useState(0)
   const [displayed, setDisplayed] = useState("")
   const [isDeleting, setIsDeleting] = useState(false)
@@ -106,16 +107,14 @@ export function Hero() {
           className="mt-12 flex flex-wrap items-center justify-center gap-2 animate-fade-in-up"
           style={{ animationDelay: "500ms" }}
         >
-          {["React", "Next.js", "TypeScript", "Tailwind CSS", "Sanity CMS"].map(
-            (tech) => (
-              <span
-                key={tech}
-                className="rounded-full border border-border bg-card/50 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur-sm"
-              >
-                {tech}
-              </span>
-            )
-          )}
+          {techStack.map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-border bg-card/50 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur-sm"
+            >
+              {tech}
+            </span>
+          ))}
         </div>
       </div>
 

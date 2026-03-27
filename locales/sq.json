@@ -1,365 +1,391 @@
 {
   "nav": {
-    "home": "Kryefaqja",
-    "about": "Rreth Meje",
-    "devTools": "Vegla Zhvillimi"
+    "home": "Kreu",
+    "about": "Rreth meje",
+    "devTools": "Mjetet e Zhvillimit"
   },
   "footer": {
     "role": "Zhvillues Frontend",
-    "rights": "Te gjitha te drejtat e rezervuara."
+    "rights": "Të gjitha të drejtat të rezervuara."
   },
   "hero": {
-    "badge": "I disponueshem per pune",
-    "greeting": "Pershendetje, une jam",
-    "description": "Ndertoj aplikacione moderne dhe responsive me nderfaqe te pasterta, logjike reale biznesi dhe arkitekture te shkallezueshme. I fokusuar ne React, Next.js dhe dizajn te drejtuar nga komponentet.",
+    "badge": "I disponueshëm për punë",
+    "greeting": "Përshëndetje, unë jam",
+    "description": "Unë jam një zhvillues frontend që mësova duke ndërtuar projekte reale — nga faqet e internetit të bizneseve të vogla deri te pultet dhe aplikacionet e drejtuara nga CMS. Punoj me React, Next.js dhe Angular, duke u fokusuar në një UI të pastër, strukturë të fortë dhe ndërfaqe që janë të këndshme për t'u përdorur.",
     "cta": {
-      "contact": "Na Kontaktoni",
-      "cv": "Shiko CV-ne"
+      "contact": "Kontakto",
+      "cv": "Shiko më shumë"
     },
     "roles": [
       "Zhvillues Frontend",
-      "Specialist React",
-      "Ndertues Next.js",
-      "Inxhinier UI"
+      "Zhvillues React & Next.js",
+      "Zgjidhës problemesh me Angular",
+      "Ndërtues i fokusuar te UI"
+    ],
+    "tech": [
+      "React",
+      "Next.js",
+      "Angular",
+      "Sanity CMS",
+      "Ndreqja e UI-së"
     ]
   },
   "featuredProjects": {
-    "label": "Punet e Zgjedhura",
-    "title": "Projektet qe kam ndertuar",
-    "subtitle": "Nje perzgjedhje e aplikacioneve web, paneleve dhe faqeve te biznesit qe tregojne aftesite e mia ne zhvillimin frontend."
+    "label": "Punë të Veçanta",
+    "title": "Projekte që tregojnë si mendoj",
+    "subtitle": "Këto janë projektet që përfaqësojnë më së miri mënyrën time të punës: praktike, kureshtare dhe e fokusuar në ndërtimin e gjërave që janë reale, të dobishme dhe të kuruara mirë."
   },
   "projectCard": {
     "viewDetails": "Shiko Detajet",
-    "live": "Live",
-    "code": "Kodi"
+    "live": "Drejpërdrejt",
+    "code": "Kod"
   },
   "aboutPreview": {
-    "label": "Rreth Meje",
-    "title": "Kthimi i ideve ne nderfaqe",
-    "p1": "Zhvillues frontend me pervoje praktike ne ndertimin e aplikacioneve web, paneleve, platformave e-commerce dhe faqeve te biznesit. Fokusuar ne shkrimin e kodit te paster, te mirembajteshem dhe ne krijimin e pervojave intuitive.",
-    "p2": "I rehat duke punuar ne menyre te pavarur, duke perkthyer nevojat e biznesit ne nderfaqe funksionale dhe duke ofruar zgjidhje te plota frontend.",
-    "stats": {
-      "projects": "Projekte te Perfunduara",
-      "years": "Vite Mesimi",
-      "focus": "Fokusi Kryesor"
-    }
+    "label": "Rreth meje",
+    "title": "Një ndërtues së pari, pastaj një zhvillues frontend",
+    "p1": "Rruga ime në frontend nuk ishte vetëm me tutoriale dhe teori. Mësova duke dorëzuar projekte, duke punuar si freelancer dhe duke zgjidhur probleme reale të produktit.",
+    "p2": "Ajo që më pëlqen më shumë është kthimi i ideve në ndërfaqe dhe bërja e tyre të duken të rafinuara, praktike dhe të dobishme.",
+    "stats": [
+      {
+        "value": "10+",
+        "label": "Projekte të ndërtuara"
+      },
+      {
+        "value": "2+ vite",
+        "label": "Mësimi duke bërë"
+      },
+      {
+        "value": "React+",
+        "label": "Zona kryesore e komoditetit"
+      }
+    ]
   },
   "process": {
-    "label": "Procesi Im",
+    "label": "Procesi im",
     "title": "Si punoj",
-    "subtitle": "Nje qasje e thjeshtezuar nga koncepti ne shperndarje, duke siguruar cilesine ne cdo faze.",
+    "subtitle": "Më pëlqen ta mbaj procesin të thjeshtë: të kuptoj problemin, të formësoj eksperiencën, të ndërtoj me kujdes dhe të vazhdoj të rafinuoj derisa të ndjehet si duhet.",
     "stepLabel": "Hapi",
     "steps": [
       {
-        "title": "Zbuloj",
-        "description": "Kuptimi i nevojave te biznesit, audiencës se synuar dhe qellimeve te projektit per te krijuar nje baze solide."
+        "title": "Kuptoj",
+        "description": "Filloj duke kuptuar se çfarë duhet të bëjë produkti, për kë është dhe çfarë do ta bënte eksperiencën të qartë në vend të komplikuar."
       },
       {
-        "title": "Dizajnoj",
-        "description": "Planifikimi i struktures se UI, arkitektures se komponenteve dhe rrjedhave te perdoruesit per nje pervoje intuitive."
+        "title": "Strukturë",
+        "description": "Para se të shkruaj shumë kod, mendoj për paraqitjen, komponentët dhe rrjedhën në mënyrë që UI të ketë një bazë të fortë dhe të mos bëhet e çrregullt më vonë."
       },
       {
-        "title": "Ndertoj",
-        "description": "Shkrimi i kodit te paster dhe te shkallezueshem me React dhe Next.js, i fokusuar ne performancen dhe praktikat me te mira."
+        "title": "Ndërtoj",
+        "description": "Kjo është pika ku ndihem më rehat: ndërtimi me React, Next.js ose Angular dhe përpjekja për ta mbajtur kodin të lexueshëm, të ripërdorshëm dhe të ndershëm."
       },
       {
-        "title": "Shperndaj",
-        "description": "Testimi, optimizimi dhe shperndarja e aplikacionit me CI/CD per nje lansim te qete ne prodhim."
+        "title": "Rafinoj",
+        "description": "Testoj, lustroj dhe rishikoj detajet e vogla sepse cilësia përfundimtare zakonisht vjen nga 10 përqindëshi i fundit, jo vetëm nga versioni i parë."
       }
     ]
   },
   "pagePreviews": {
-    "label": "Eksploro Me Shume",
-    "title": "Me shume per te zbuluar",
+    "label": "Eksploro më shumë",
+    "title": "Pak më shumë kontekst",
     "items": [
       {
-        "title": "Certifikatat & CV",
-        "description": "Shikoni certifikatat e mia profesionale, kronologjine e pervojes dhe shkarkoni CV-ne time. Merrni pamjen e plote te sfondimit tim.",
-        "buttonLabel": "Shiko Rreth Meje"
+        "title": "Përvoja, aftësitë dhe sfondi",
+        "description": "Nëse dëshironi një pasqyrë më të plotë, faqja 'Rreth meje' mbulon përvojën time, mjetet me të cilat punoj dhe si jam zhvilluar në frontend përmes punës si freelancer dhe asaj në produkte.",
+        "buttonLabel": "Shko te Rreth meje"
       },
       {
-        "title": "Vegla Zhvillimi",
-        "description": "Nje koleksion veglash te dobishme qe ndertova: konvertues ngjyrash, gjenerues gradientesh dhe pamje e drejtperdrejte e kodit.",
-        "buttonLabel": "Eksploro Veglat"
+
+        "title": "Mjetet e vogla që kam ndërtuar për qejf",
+        "description": "Më pëlqen gjithashtu të krijoj projekte më të vogla utilitare. Janë një mënyrë e mirë për të eksperimentuar, për të mbajtur aftësitë e mprehta dhe për t'i kthyer idetë e thjeshta në diçka interaktive.",
+        "buttonLabel": "Eksploro Mjetet"
       }
     ]
   },
   "aboutHero": {
-    "badge": "I disponueshem per mundesi",
+    "badge": "I disponueshëm për mundësi",
     "eyebrow": "Zhvillues Frontend",
-    "title": "Rreth",
-    "bio": "Zhvillues frontend me pervoje praktike ne ndertimin e aplikacioneve web, paneleve, platformave e-commerce dhe faqeve te biznesit. Fokus i forte ne React, Next.js, Angular, JavaScript modern, UI te drejtuar nga komponentet dhe sisteme te mbeshtetur nga CMS. I aftë në mjete monitorimi, lokalizim dhe bashkëpunim ndër-ekipe.",
-    "location": "I disponueshem ne distance",
-    "downloadCv": "Shkarko CV-ne",
+    "title": "Rreth meje",
+    "bio": "Zhvillues frontend me përvojë praktike në ndërtimin e aplikacioneve web të ngjashme me ato të prodhimit, paneleve, platformave e-commerce dhe faqeve të internetit për biznese. Fokus i fortë te React, Next.js, Angular, JavaScript modern, UI e bazuar në komponentë dhe sisteme të mbështetura nga CMS. I aftë në mjetet e monitorimit, lokalizimin dhe bashkëpunimin ndër-ekipor.",
+    "location": "I Disponueshëm në Distancë",
+    "downloadCv": "Shkarkoni CV",
     "stats": [
-      { "label": "3+ vjet", "desc": "pervoja" },
-      { "label": "10+ projekte", "desc": "dërguar" },
-      { "label": "React, Next.js & Angular", "desc": "fokusuar" }
+      {
+        "label": "2+ vite",
+        "desc": "përvojë"
+      },
+      {
+        "label": "10+ projekte",
+        "desc": "të realizuara"
+      },
+      {
+        "label": "React, Next.js & Angular",
+        "desc": "i fokusuar"
+      }
     ],
-    "stack": ["React", "Next.js", "Angular", "TS", "Tailwind"],
-    "basedIn": "Bazuar në",
-    "country": "🇬🇷 Greqi"
+    "stack": {
+      "0": "React",
+      "1": "Next.js",
+      "2": "Angular",
+      "3": "TS",
+      "4": "Tailwind"
+    },
+    "basedIn": "Me bazë në",
+    "country": "Tiranë, Shqipëri"
   },
   "experience": {
-    "label": "Pervoja",
+    "label": "Përvoja",
     "title": "Sfondi profesional",
     "subtitle": "Tre kapituj. Një drejtim.",
-    "note": "Pika e përbashkët nëpër këto role: Mësoj duke bërë, dërgoj gjëra reale dhe lëviz me qëllim drejt inxhinierisë frontend — një commit në një kohë.",
+    "note": "Fija lidhëse në këto role: Mësoj duke bërë, dorëzoj gjëra reale dhe lëviz me qëllim drejt inxhinierisë frontend, një 'commit' në një kohë.",
     "items": [
       {
         "id": "devx",
-        "title": "DevX Engineer",
+        "title": "Inxhinier DevX",
         "company": "B2TECH, Tiranë",
-        "type": "Kohe e plote",
-        "period": "Mar 2026 – Prezant",
-        "description": "Hulumtim dhe zgjidhje e çështjeve prodhuese me mjetet Cloudflare, Logz.io, Grafana dhe Coralogix. Bashkëpunim me ekipet frontend dhe inxhinieri për të debugguar dhe zgjidhur probleme të UI në shumë ambiente. Puna me codebase Angular për identifikim dhe rregullime. Mirëmbajtje konfiguracionesh në produkte të ndryshme, me përputhshmëri markash. Mbështetje procesesh release midis product, frontend dhe infrastrukturë.",
+        "type": "Kohë të plotë",
+        "period": "Mars 2026 Sot",
+        "description": "Punoj me konfigurimet e aplikacionit, 'feature flags' dhe cilësimet specifike të mjedisit në produkte të shumta. Identifikoj shkaqet rrënjësore që ndikojnë shërbimet frontend dhe backend, pastaj zbatoj ose vërtetoj rregullimet. Bashkëpunoj me ekipet frontend dhe backend për të ndrequr problemet dhe për të konfirmuar zgjidhjet para lëshimit. Zgjidh problemet në mjediset lokale, QA, staging dhe prodhimi. Përdor Cloudflare, Logz.io, Grafana dhe Coralogix për të zbuluar probleme dhe për të verifikuar rregullimet. Hulumtoj dhe ndreq problemet që lidhen me UI në bazat e kodit Angular, dhe koordinoj ndryshimet e lëshimit për të mbajtur vendosjet të qëndrueshme nëpër mjedise.",
         "skills": [
           "Cloudflare",
           "Logz.io",
           "Grafana",
           "Coralogix",
           "Angular",
-          "Konfigurim",
-          "Përkoordinim release"
-        ],
-        "highlight": true
+          "Feature flags",
+          "Menaxhimi i konfigurimit",
+          "Koordinimi i lëshimit"
+        ]
       },
       {
-        "id": "techsupport",
-        "title": "Tech Support Engineer",
+        "id": "mbështetje teknike",
+        "title": "Inxhinier i Mbështetjes Teknike",
         "company": "B2TECH, Tiranë",
-        "type": "Kohe e plote",
-        "period": "Nën 2023 – Mar 2026",
-        "description": "Hetim e zgjidhje e problemeve përdoruesore që prekën sjelljen frontend dhe funksionalitetin UI. Përdorim i Cloudflare, Logz.io dhe Grafana për analizë gabimesh dhe gjetje shkaqesh themelore. Azhurnime të UI si lokalizim dhe konfigurim marke. Bashkëpunim me ekipet frontend dhe UI/UX për konsistencë. Menaxhim i file-ve JSON për konfigurim dhe përkthime; gjurmim bugs në Jira.",
+        "type": "Kohë të plotë",
+        "period": "Nëntor 2023 Mars 2026",
+        "description": "Hulumtoi dhe zgjidhi çështje që ndikonin sjelljen e frontend-it dhe funksionalitetin e UI-së, me të cilat përballeshin përdoruesit. Përdori Cloudflare, Logz.io dhe Grafana për të analizuar gabimet dhe për të identifikuar shkaqet rrënjësore. Zbatoi përditësime që lidhen me UI, përfshirë lokalizimin dhe konfigurimin e markës. Bashkëpunoi me ekipet frontend dhe UX për sjellje të qëndrueshme ndër-platformore. Menaxhoi konfigurimet JSON dhe skedarët e përkthimit dhe ndoqi gabimet dhe kërkesat për funksionalitete në Jira.",
         "skills": [
           "Cloudflare",
           "Logz.io",
           "Grafana",
           "Jira",
           "Lokalizim",
-          "Konfigurim markë"
-        ],
-        "highlight": false
+          "Konfigurimi i markës"
+        ]
       },
       {
-        "id": "freelance",
-        "title": "Freelance Frontend Developer",
-        "company": "Vetë-punësim",
-        "type": "Freelance",
-        "period": "Mar 2025 – Prezant",
-        "description": "Zhvillim aplikacionesh web me React dhe Next.js, përfshirë integrime API dhe CMS. Ndërtim komponentësh UI responsive dhe aplikacione me shumë faqe me fokus në performancë dhe përdorshmëri. Implementim dashboard-esh admin dhe sisteme përmbajtjeje me Sanity CMS. Dorëzim zgjidhjesh frontend të plota me autentikim dhe rryma pune dashboards.",
+        "id": "I lirë",
+        "title": "Zhvillues Frontend i Lirë",
+        "company": "I vetëpunësuar",
+        "type": "I Lirë",
+        "period": "Mars 2025 - Aktualisht",
+        "description": "Zhvillova aplikacione web me React dhe Next.js, duke përfshirë integrime API dhe CMS. Krijova komponentë UI responsivë dhe aplikacione me shumë faqe me fokus te performanca dhe përdorshmëria. Implementova panele admini dhe sisteme përmbajtjesh me Sanity CMS. Dorëzova zgjidhje të plota frontend, duke përfshirë rrjedha autentifikimi, panele kontrolli dhe faqe ulëse.",
         "skills": [
           "React",
           "Next.js",
           "Sanity CMS",
-          "UI responsive",
+          "UI Responsiv",
           "Integrime API"
-        ],
-        "highlight": false
+        ]
+        
       }
     ]
   },
   "skills": {
-    "label": "Aftesite",
-    "title": "Paketa teknike",
+    "label": "Aftësi",
+    "title": "Vegla teknike",
     "categories": {
       "frontend": "Frontend",
-      "styling": "Stilizimi",
-      "stateData": "Gjendja & Te Dhenat",
-      "tools": "Veglat & Rrjedha e Punes",
-      "monitoring": "Monitorimi",
-      "strengths": "Aftesite Kryesore"
+      "styling": "Stilizim",
+      "stateData": "Gjendja dhe të Dhënat",
+      "tools": "Vegla dhe Fluksi i Punës",
+      "monitoring": "Monitorim",
+      "strengths": "Pikat kryesore të forta"
     }
   },
   "certificates": {
-    "label": "Certifikimet",
-    "title": "Certifikimet profesionale",
-    "issuedBy": "Leshuar nga",
-    "completedCourses": "Kurset e Perfunduara"
+    "label": "Certifikime",
+    "title": "Certifikime profesionale",
+    "issuedBy": "Lëshuar nga",
+    "completedCourses": "Kurse të Përfunduara"
   },
   "contact": {
-    "label": "Kontakti",
-    "title": "Le te punojme se bashku",
-    "subtitle": "Keni nje projekt ne mendje ose thjesht doni te bisedoni? Do te deshiroja te degjoja nga ju. Plotesoni formularin ose na kontaktoni permes kanaleve me poshte.",
+    "label": "Kontakt",
+    "title": "Le të punojmë së bashku",
+    "subtitle": "Keni një projekt në mendje apo thjesht dëshironi të bisedoni? Do të më pëlqente të dëgjoja nga ju. Plotësoni formularin ose kontaktoni përmes ndonjë prej kanaleve më poshtë.",
     "form": {
       "name": "Emri",
       "namePlaceholder": "Emri juaj",
       "email": "Email",
       "emailPlaceholder": "ju@shembull.com",
       "message": "Mesazhi",
-      "messagePlaceholder": "Na tregoni per projektin tuaj...",
-      "send": "Dergo Mesazhin",
-      "sending": "Duke derguar...",
-      "success": "Mesazhi u dergua! Do t'ju pergjigjem se shpejti."
+      "messagePlaceholder": "Më tregoni për projektin tuaj...",
+      "send": "Dërgo Mesazhin",
+      "sending": "Duke dërguar...",
+      "success": "Mesazhi u dërgua! Do t'ju përgjigjem së shpejti."
     }
   },
   "tools": {
-    "label": "Vegla Zhvillimi",
-    "title": "Vegla te dobishme per zhvillues",
-    "subtitle": "Nje koleksion veglash te dobishme qe ndertova per zhvillimin e perditshem. Zgjidhni nje vegle me poshte dhe filloni ta perdorni.",
+    "label": "Vegla Zhvilluesi",
+    "title": "Vegla të dobishme zhvillimi",
+    "subtitle": "Një koleksion me vegla të dobishme që kam ndërtuar për zhvillimin e përditshëm. Zgjidhni një vegël më poshtë dhe filloni ta përdorni.",
     "tabs": {
       "color": "Konvertues Ngjyrash",
-      "gradient": "Gjenerues Gradientesh",
-      "code": "Pamje e Kodit"
+      "gradient": "Gjenerator Gradientësh",
+      "code": "Parashikim Kodi"
     },
     "color": {
       "title": "Konvertues Ngjyrash",
-      "nameToHex": "Emer ne Hex",
-      "hexToName": "Hex ne Emer",
-      "placeholderName": "Shkruani emrin e ngjyres (p.sh., coral)",
-      "placeholderHex": "Shkruani hex (p.sh., #FF7F50)",
-      "notFound": "Emri i ngjyres nuk u gjet",
-      "invalidHex": "Hex i pavlefshem (perdorni #RRGGBB)",
-      "closest": "Me e aferta",
-      "copied": "U kopjua ne clipboard!"
+      "nameToHex": "Emri në Hex",
+      "hexToName": "Hex në Emër",
+      "placeholderName": "Vendos emrin e ngjyrës (p.sh., koral)",
+      "placeholderHex": "Vendos kodin hex (p.sh., #FF7F50)",
+      "notFound": "Emri i ngjyrës nuk u gjet",
+      "invalidHex": "Hex i pavlefshëm (përdor #RRGGBB)",
+      "closest": "Më i afërti",
+      "copied": "Kopjuar në clipboard!"
     },
     "gradient": {
-      "title": "Gjenerues Gradientesh",
+      "title": "Gjenerator Gradientësh",
       "linear": "Linear",
       "radial": "Radial",
       "color1": "Ngjyra 1",
       "color2": "Ngjyra 2",
-      "angle": "Kendi",
-      "cssCopied": "CSS u kopjua ne clipboard!"
+      "angle": "Këndi",
+      "cssCopied": "CSS u kopjua në clipboard!"
     },
     "codePreview": {
-      "livePreview": "Pamje e Drejtperdrejte",
-      "codeCopied": "I gjithe kodi u kopjua!"
+      "livePreview": "Parashikim Live",
+      "codeCopied": "Kodi i plotë u kopjua!"
     }
   },
   "projectDetail": {
     "backToProjects": "Kthehu te projektet",
-    "theChallenge": "Sfida",
+    "theChallenge": "Sfidat",
     "theSolution": "Zgjidhja",
-    "keyHighlights": "Pikat Kryesore",
+    "keyHighlights": "Pikat kryesore",
     "liveDemo": "Demo Live",
     "sourceCode": "Kodi Burimor",
-    "previous": "I meparshem",
+    "previous": "Paraprak",
     "next": "Tjetri",
-    "screenshotPlaceholder": "Pamje e projektit"
+    "screenshotPlaceholder": "Vendmbajtës për pamjen e projektit"
   },
   "projects": {
     "carpentry-business-website": {
-      "title": "Almer – Website për Biznes Zdrukthtarie",
-      "shortDescription": "Projekti im i parë i plotë, i ndërtuar tërësisht me JavaScript për një biznes real.",
-      "longDescription": "Almer ishte projekti im i parë i plotë dhe ai ku mësova realisht si të ndërtoj një website nga fillimi deri në fund. E zhvillova të gjithë vetë dhe është ndërtuar vetëm me JavaScript, pa TypeScript. Ky projekt më mësoi të mendoj si zhvillues duke zgjidhur probleme reale biznesi, jo thjesht duke ndjekur tutoriale.",
-      "problem": "Biznesi kishte nevojë për një prezencë online profesionale dhe të thjeshtë për të prezantuar shërbimet dhe punimet e mëparshme.",
-      "solution": "Ndërtova një website të pastër dhe responsive duke përdorur JavaScript modern dhe Next.js, me fokus në performancë, qartësi dhe përdorshmëri për çdo pajisje.",
-      "role": "Frontend Developer",
+      "title": "Uebfaqja e Biznesit të Marangozërisë Almer",
+      "shortDescription": "Projekti im i parë i plotë web, ndërtuar tërësisht me JavaScript për një biznes lokal real.",
+      "longDescription": "Almer ishte projekti im i parë i plotë dhe ai ku unë mësova vërtet si të ndërtoja një uebfaqe reale nga fillimi në fund. Unë e menaxhova gjithçka vetë, nga strukturimi i faqeve deri te implementimi i UI dhe logjikës. Ky projekt është ndërtuar tërësisht me JavaScript (pa TypeScript) dhe më mësoi si të mendoja si një zhvillues që zgjidh probleme reale biznesi, jo thjesht duke ndjekur tutoriale.",
+      "problem": "Biznesi kishte nevojë për një prani të thjeshtë, por profesionale në internet për të shfaqur shërbimet dhe punën e mëparshme, pa u mbështetur te vegla komplekse apo platforma të palëve të treta.",
+      "solution": "Ndërtova një uebfaqe të pastër dhe responsivë duke përdorur JavaScript modern dhe Next.js, duke u fokusuar te qartësia, performanca dhe përdorshmëria. Faqja prezanton qartë shërbimet e biznesit, projektet e kaluara dhe informacionin e kontaktit në një mënyrë të lehtë si për përdoruesit ashtu edhe për pronarin e biznesit.",
+      "role": "Zhvillues Frontend",
       "highlights": [
-        "Projekti im i parë end-to-end",
+        "Projekti i parë i plotë nga fillimi në fund",
         "Ndërtuar tërësisht me JavaScript",
-        "Projekt për biznes real",
-        "Responsive për mobile dhe desktop",
-        "Përvojë shumë e fortë mësimore"
+        "Klient real dhe nevoja reale biznesi",
+        "Paraqitje responsivë për të gjitha pajisjet",
+        "Përvojë e fortë mësimore në strukturë dhe zgjidhjen e problemeve"
       ]
     },
-
     "cyber-security-blog": {
-      "title": "0wnit – Blog për Cyber Security",
-      "shortDescription": "Platformë blogu për cyber security me dizajn të personalizuar dhe CMS.",
-      "longDescription": "0wnit është projekti ku u fokusova maksimalisht te dizajni. Çdo komponent është dizajnuar dhe ndërtuar nga unë. Platforma funksionon si blog ku postimet krijohen dhe menaxhohen përmes Sanity CMS, duke kombinuar dizajn modern me fleksibilitet.",
-      "problem": "Shumë blogje për cyber security duken të zakonshme dhe nuk i kushtojnë rëndësi dizajnit dhe përvojës së përdoruesit.",
-      "solution": "Ndërtova një sistem komponentësh nga zero dhe e lidha me Sanity CMS, duke krijuar një blog të shpejtë, modern dhe vizualisht të dallueshëm.",
-      "role": "Frontend Developer & UI Designer",
+      "title": "Blogu i Sigurisë Kibernetike 0wnit",
+      "shortDescription": "Një platformë blogu për sigurinë kibernetike me UI të dizajnuar me porosi dhe krijim përmbajtjesh të mundësuar nga CMS.",
+      "longDescription": "0wnit është projekti ku unë u fokusova shumë në cilësinë e dizajnit dhe UI. Unë e projektova dhe ndërtova çdo komponent vetë, duke i kushtuar vëmendje të veçantë paraqitjes, hapësirës, tipografisë dhe përvojës së përgjithshme të përdoruesit. Platforma funksionon si një blog ku përdoruesit mund të krijojnë dhe menaxhojnë postimet përmes Sanity CMS, duke e bërë atë fleksibël dhe të shkallëzueshëm.",
+      "problem": "Shumica e blogeve të sigurisë kibernetike duken gjenerike dhe fokusohen vetëm në përmbajtje, duke injoruar dizajnin dhe përdorshmërinë. Unë doja të krijoja diçka që ndihet moderne, e lexueshme dhe vizualisht dalluese.",
+      "solution": "Unë e projektova një sistem komponentësh me porosi nga e para dhe e lidha me Sanity CMS, duke lejuar krijimin dhe menaxhimin e lehtë të postimeve në blog. Rezultati është një platformë blogu e shpejtë, e pastër dhe vizualisht e lëmuar që balancon dizajnin e fortë me menaxhimin e fuqishëm të përmbajtjes.",
+      "role": "Zhvillues Frontend & Dizajner UI",
       "highlights": [
-        "Dizajn i plotë nga zero",
-        "Menaxhim përmbajtjeje me Sanity CMS",
-        "Fokus i fortë në UX",
-        "Dizajn modern dhe i pastër",
-        "Një nga projektet e mia më të forta vizualisht"
+        "Dizajn UI me porosi nga e para",
+        "Përmbajtje blogu e mundësuar nga CMS duke përdorur Sanity",
+        "Fokus i fortë në UX dhe lexueshmëri",
+        "Sistem dizajni modern, minimal dhe konsistent",
+        "Një nga projektet e mia më të forta të fokusuara në dizajn"
       ]
     },
-
     "ai-learning-platform": {
-      "title": "Knowledge Flow – Platformë Mësimi me AI",
-      "shortDescription": "Platformë mësimore me AI, e ndërtuar për një hackathon.",
-      "longDescription": "Knowledge Flow u ndërtua gjatë një hackathoni, me fokus përdorimin e AI për të përmirësuar përvojën e të mësuarit. Implementova integrimin me OpenAI API dhe u fokusova në ndërveprim dhe zhvillim të shpejtë.",
-      "problem": "Platformat tradicionale të mësimit shpesh nuk ofrojnë personalizim dhe feedback në kohë reale.",
-      "solution": "Përmes integrimit të AI, platforma ofron asistencë dinamike dhe sugjerime mësimore, duke treguar potencialin e AI në edukim.",
-      "role": "Frontend Developer",
+      "title": "Platforma Mësimore e AI Knowledge Flow",
+      "shortDescription": "Një platformë mësimore e mundësuar nga AI e ndërtuar për një hackathon duke përdorur integrimin e OpenAI.",
+      "longDescription": "Knowledge Flow u ndërtua si pjesë e një hackathoni, ku qëllimi ishte të eksplorohej se si AI mund të mbështesë mësimin e personalizuar. Unë e zhvillova frontend-in dhe integrimin e funksioneve të AI duke përdorur API-në e OpenAI, duke u fokusuar në ndërveprimin, qartësinë dhe iteracionin e shpejtë nën presion kohe.",
+      "problem": "Platformat tradicionale të mësimit shpesh nuk kanë personalizim dhe reagim në kohë reale, duke e bërë më të vështirë për përdoruesit të qëndrojnë të angazhuar.",
+      "solution": "Duke integruar AI përmes API-së së OpenAI, platforma mund të ofrojë ndihmë dinamike mësimore dhe sugjerime përmbajtjesh. Projekti demonstron se si AI mund të përmirësojë përvojat edukative kur kombinohet me një frontend të pastër dhe intuitiv.",
+      "role": "Zhvillues Frontend",
       "highlights": [
-        "Projekt hackathoni",
-        "Integrim me OpenAI API",
-        "Zhvillim i shpejtë",
-        "Eksperimentim me AI",
-        "Fokus në ndërveprim me përdoruesin"
+        "Ndërtuar gjatë një hackathon-i",
+        "Integrim i AI duke përdorur API-në e OpenAI",
+        "Fokus te mësimi dhe eksperimentimi",
+        "Zhvillim i shpejtë nën kufizime kohore",
+        "Eksplorim i ndërveprimit të përdoruesit të drejtuar nga AI"
       ]
     },
-
     "ai-next-earth": {
-      "title": "Next Earth – Platformë Vullnetarizmi me AI",
-      "shortDescription": "Platformë që përdor AI për të gjetur mundësi vullnetarizmi.",
-      "longDescription": "Next Earth u ndërtua për një hackathon dhe synon të ndihmojë përdoruesit të gjejnë mundësi vullnetarizmi përmes AI. Kombinova OpenAI API me dataset-e reale për të krijuar rekomandime kuptimplota.",
-      "problem": "Gjetja e mundësive të duhura për vullnetarizëm shpesh është e vështirë dhe jo e personalizuar.",
-      "solution": "Duke përdorur AI dhe të dhëna reale, platforma sugjeron role vullnetarizmi që përputhen më mirë me interesat e përdoruesit.",
-      "role": "Frontend Developer",
+      "title": "Platforma e Vullnetarizmit e Mundësuar nga AI e Next Earth",
+      "shortDescription": "Një projekt hackathon-i që përdor AI për të ndihmuar përdoruesit të zbulojnë mundësi vullnetarizmi.",
+      "longDescription": "Next Earth u krijua për një hackathon me idenë e përdorimit të AI për të lidhur njerëzit me mundësi vullnetarizmi që përputhen me interesat dhe aftësitë e tyre. Unë punova në frontend dhe integrimin e AI, duke kombinuar logjikën e mundësuar nga OpenAI me grupe të dhënash reale për të prodhuar rezultate kuptimplota.",
+      "problem": "Gjetja e mundësive të rëndësishme të vullnetarizmit mund të jetë sfiduese, sidomos kur platformat nuk janë të personalizuara.",
+      "solution": "Duke përdorur AI dhe grupe të dhënash të strukturuara, platforma ndihmon përdoruesit të zbulojnë role vullnetarizmi që përputhen më mirë me preferencat e tyre. Ky projekt më lejoi të eksploroja rekomandimet e drejtuara nga AI dhe prezantimin e të dhënave në një kontekst real.",
+      "role": "Zhvillues Frontend",
       "highlights": [
-        "Projekt hackathoni",
-        "Rekomandime me AI",
-        "Integrim me OpenAI API",
-        "Përdorim i dataset-eve",
-        "Ndikim real social"
+        "Projekt i ndërtuar në hackathon",
+        "Rekomandime të mundësuara nga AI",
+        "Integrim me API-në e OpenAI",
+        "Përdorim i grupeve të të dhënave të jashtme",
+        "Fokus te ndikimi kuptimplotë në botën reale"
       ]
     },
-
     "back-office-dashboard": {
-      "title": "Back Office Dashboard",
-      "shortDescription": "Aplikacion back office i ndërtuar për të mësuar Angular.",
-      "longDescription": "Ky projekt u ndërtua për të mësuar Angular dhe mënyrën se si strukturohen aplikacionet e mëdha. U fokusova në komponentë, forma, routing dhe struktura tipike për admin dashboards.",
-      "problem": "Kalimi nga aplikacione të thjeshta në sisteme komplekse admin është sfidues për shumë zhvillues.",
-      "solution": "Duke ndërtuar një back office nga zero, mësova arkitekturë Angular, menaxhim të formave dhe ndarje logjike të aplikacionit.",
-      "role": "Frontend Developer",
+      "title": "Paneli i Adminstrimit (Back Office Dashboard)",
+      "shortDescription": "Një aplikacion back office i bazuar në Angular, i ndërtuar për të mësuar zhvillimin frontend të stilit të ndërmarrjes.",
+      "longDescription": "Unë e ndërtova këtë panel administrimi (back office dashboard) specifikisht për të mësuar Angular dhe për të kuptuar se si strukturohen aplikacionet e mëdha, të stilit të ndërmarrjes. Projekti fokusohet në komponentët, shërbimet, rrugëzimin dhe modelet e menaxhimit të gjendjes të përdorura zakonisht në mjetet administrative dhe të brendshme.",
+      "problem": "Shumë zhvillues frontend hasin vështirësi kur kalojnë nga aplikacionet e thjeshta te panelet e kontrollit komplekse dhe sistemet e brendshme.",
+      "solution": "Duke ndërtuar një aplikacion back office nga zero, unë mësova si të strukturoj projekte Angular, të menaxhoj formularët, të trajtoj rrjedhat e të dhënave dhe të ndërtoj komponentë të ripërdorshëm që shkallëzohen mirë në aplikacione më të mëdha.",
+      "role": "Zhvillues Frontend",
       "highlights": [
-        "Projekt mësimor për Angular",
-        "Arkitekturë me komponentë",
-        "Forma dhe menaxhim të dhënash",
-        "UI tipike admin",
-        "Bazë e fortë për aplikacione enterprise"
+        "Ndërtuar për të mësuar bazat e Angular",
+        "Arkitekturë e bazuar në komponentë",
+        "Menaxhim i formularëve dhe të dhënave",
+        "Modele UI të stilit të administrimit",
+        "Bazë e fortë për aplikacionet e ndërmarrjes"
       ]
     },
-
     "e-commerce-platform": {
-      "title": "Auren – Platformë E-Commerce",
-      "shortDescription": "Platformë e plotë e-commerce me shumë integrime dhe funksionalitete.",
-      "longDescription": "Auren është projekti im më kompleks. Përfshin dyqan të plotë online, profile përdoruesish, wishlist, porosi, analitika dhe një back office të plotë për menaxhim. Është ndërtuar si një sistem real production-level.",
-      "problem": "Ndërtimi i një platforme e-commerce reale kërkon menaxhim kompleks të përdoruesve, porosive, email-eve dhe përmbajtjes.",
-      "solution": "Përdora Next.js për performancë, Sanity CMS për menaxhim përmbajtjeje, database për përdorues dhe porosi, dhe email integrime për njoftime. Back office lejon menaxhim të plotë të sistemit.",
-      "role": "Frontend Developer",
+      "title": "Platforma e Plotë e E-commerce Auren",
+      "shortDescription": "Një platformë e-commerce e plotë, e nivelit të prodhimit me veçori dhe integrime të avancuara.",
+      "longDescription": "Auren është projekti im më i plotë dhe ambicioz. Është një platformë e-commerce e plotë që përfshin menaxhimin e produkteve, autentifikimin e përdoruesve, listat e dëshirave, porositë, analitikën dhe një back office të plotë. Unë kam dizajnuar dhe ndërtuar arkitekturën frontend, kam integruar shërbime të shumta dhe jam fokusuar në krijimin e një sistemi realist të gatshëm për prodhim.",
+      "problem": "Ndërtimi i një platforme e-commerce reale kërkon trajtimin e shumë rrjedhave komplekse si llogaritë e përdoruesve, porositë, analitika, emailet dhe menaxhimi i përmbajtjes, të gjitha duke mbajtur performancën dhe UX-in të lartë.",
+      "solution": "Unë përdora Next.js për performancë dhe shkallëzueshmëri, Sanity CMS për menaxhimin e përmbajtjes, një bazë të dhënash për përdoruesit dhe porositë, dhe implementova njoftime me email për vendosjen e porosive dhe ndryshimet e statusit. Back office-i i administratorit lejon menaxhimin efikas të produkteve, porosive dhe analitikës.",
+      "role": "Zhvillues Frontend",
       "highlights": [
-        "Dyqan i plotë online",
-        "Autentikim dhe profile përdoruesish",
-        "Wishlist dhe menaxhim porosish",
-        "CMS për produkte dhe përmbajtje",
-        "Back office për analitika",
-        "Email për status porosish",
-        "Projekti im më i avancuar"
+        "Funksionalitet i plotë i dyqanit e-commerce",
+        "Autentifikimi dhe profilet e përdoruesve",
+        "Menaxhimi i listave të dëshirave dhe porosive",
+        "Menaxhimi i produkteve dhe përmbajtjes i drejtuar nga CMS",
+        "Paneli i administratorit për analitikë dhe statusin e porosive",
+        "Integrim i emailit për përditësimet e porosive",
+        "Projekti më kompleks dhe i plotë që kam ndërtuar"
       ]
     }
   },
   "certificateItems": {
     "meta-frontend": {
-      "title": "Certifikata Profesionale e Meta Front-End",
+      "title": "Certifikata Profesionale Front-End nga Meta",
       "issuer": "Meta",
       "courses": [
-        "Hyrje ne Zhvillimin Front-End",
+        "Hyrje në Zhvillimin Front-End",
         "Programimi me JavaScript",
-        "Kontrolli i Versioneve",
-        "HTML dhe CSS ne Thellesi",
+        "Kontrolli i Versionit",
+        "HTML dhe CSS në Detaj",
         "Bazat e React",
         "React i Avancuar",
         "Bazat e Dizajnit UX/UI",
-        "Projekti Perfundimtar Front-End"
+        "Projekti Final Front-End (Capstone)"
       ]
     },
     "angular": {
-      "title": "Certifikimi Angular",
+      "title": "Certifikata Angular",
       "issuer": "Akademia Online",
       "courses": [
-        "Arkitektura bazuar ne komponente",
+        "Arkitekturë e bazuar në komponentë",
         "Bazat e TypeScript",
-        "Modulet dhe sherbimet Angular",
-        "Routing dhe lidhja e te dhenave"
+        "Modulet dhe shërbimet e Angular",
+        "Rrugëzimi dhe lidhja e të dhënave"
       ]
     }
   }

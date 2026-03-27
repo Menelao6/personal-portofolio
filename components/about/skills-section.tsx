@@ -10,9 +10,14 @@ const skillGroups = [
       "JavaScript (ES6+)",
       "React",
       "Next.js",
+      "Angular",
       "HTML5",
       "CSS3",
       "TypeScript",
+      "Python",
+      "UI Development",
+      "Localization",
+      "SEO Basics",
     ],
   },
   {
@@ -26,11 +31,22 @@ const skillGroups = [
       "CMS (Sanity)",
       "API Fetching",
       "Component Architecture",
+      "REST APIs",
+      "PostgreSQL",
+      "Component-Based Architecture",
     ],
   },
   {
     titleKey: "skills.categories.tools",
-    skills: ["Git & GitHub", "Vercel", "npm", "Chrome DevTools", "VS Code"],
+    skills: ["Git & GitHub", "Vercel", "npm", "Chrome DevTools", "VS Code", "Jira"],
+  },
+  {
+    titleKey: "skills.categories.monitoring",
+    skills: ["Cloudflare", "Logz.io", "Grafana", "Coralogix"],
+  },
+  {
+    titleKey: "skills.categories.strengths",
+    skills: ["Problem Solving", "Cross-team Collaboration", "Documentation", "Self-directed Learning"],
   },
 ]
 

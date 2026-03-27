@@ -86,10 +86,19 @@
   },
   "aboutHero": {
     "badge": "Available for opportunities",
+    "eyebrow": "Frontend Developer",
     "title": "About",
-    "bio": "Frontend developer with hands-on experience building production-like web applications, dashboards, e-commerce platforms, and business websites. Strong focus on React, modern JavaScript, component-driven UI, and CMS-backed systems.",
+    "bio": "Frontend developer with hands-on experience building production-like web applications, dashboards, e-commerce platforms, and business websites. Strong focus on React, Next.js, Angular, modern JavaScript, component-driven UI, and CMS-backed systems. Skilled in monitoring tools, localization, and cross-team collaboration.",
     "location": "Available Remote",
-    "downloadCv": "Download CV"
+    "downloadCv": "Download CV",
+    "stats": [
+      { "label": "2+ yrs", "desc": "experience" },
+      { "label": "10+ projects", "desc": "shipped" },
+      { "label": "React, Next.js & Angular", "desc": "focused" }
+    ],
+    "stack": ["React", "Next.js", "Angular", "TS", "Tailwind"],
+    "basedIn": "Based in",
+    "country": "Tirana, Albania"
   },
   "experience": {
     "label": "Experience",
@@ -157,7 +166,9 @@
       "frontend": "Frontend",
       "styling": "Styling",
       "stateData": "State & Data",
-      "tools": "Tools & Workflow"
+      "tools": "Tools & Workflow",
+      "monitoring": "Monitoring",
+      "strengths": "Core Strengths"
     }
   },
   "certificates": {

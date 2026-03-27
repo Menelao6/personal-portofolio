@@ -86,10 +86,19 @@
   },
   "aboutHero": {
     "badge": "I disponueshem per mundesi",
+    "eyebrow": "Zhvillues Frontend",
     "title": "Rreth",
-    "bio": "Zhvillues frontend me pervoje praktike ne ndertimin e aplikacioneve web, paneleve, platformave e-commerce dhe faqeve te biznesit. Fokus i forte ne React, JavaScript modern, UI te drejtuar nga komponentet dhe sisteme te mbeshtetur nga CMS.",
+    "bio": "Zhvillues frontend me pervoje praktike ne ndertimin e aplikacioneve web, paneleve, platformave e-commerce dhe faqeve te biznesit. Fokus i forte ne React, Next.js, Angular, JavaScript modern, UI te drejtuar nga komponentet dhe sisteme te mbeshtetur nga CMS. I aftë në mjete monitorimi, lokalizim dhe bashkëpunim ndër-ekipe.",
     "location": "I disponueshem ne distance",
-    "downloadCv": "Shkarko CV-ne"
+    "downloadCv": "Shkarko CV-ne",
+    "stats": [
+      { "label": "3+ vjet", "desc": "pervoja" },
+      { "label": "10+ projekte", "desc": "dërguar" },
+      { "label": "React, Next.js & Angular", "desc": "fokusuar" }
+    ],
+    "stack": ["React", "Next.js", "Angular", "TS", "Tailwind"],
+    "basedIn": "Bazuar në",
+    "country": "🇬🇷 Greqi"
   },
   "experience": {
     "label": "Pervoja",
@@ -157,7 +166,9 @@
       "frontend": "Frontend",
       "styling": "Stilizimi",
       "stateData": "Gjendja & Te Dhenat",
-      "tools": "Veglat & Rrjedha e Punes"
+      "tools": "Veglat & Rrjedha e Punes",
+      "monitoring": "Monitorimi",
+      "strengths": "Aftesite Kryesore"
     }
   },
   "certificates": {

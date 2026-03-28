@@ -43,6 +43,7 @@
   "aboutPreview": {
     "label": "Rreth meje",
     "title": "Një ndërtues së pari, pastaj një zhvillues frontend",
+    "cta": "Mëso më shumë rreth meje",
     "p1": "Rruga ime në frontend nuk ishte vetëm me tutoriale dhe teori. Mësova duke dorëzuar projekte, duke punuar si freelancer dhe duke zgjidhur probleme reale të produktit.",
     "p2": "Ajo që më pëlqen më shumë është kthimi i ideve në ndërfaqe dhe bërja e tyre të duken të rafinuara, praktike dhe të dobishme.",
     "stats": [
@@ -145,19 +146,21 @@
         "type": "Kohë të plotë",
         "period": "Mars 2026 Sot",
         "description": "Punoj me konfigurimet e aplikacionit, 'feature flags' dhe cilësimet specifike të mjedisit në produkte të shumta. Identifikoj shkaqet rrënjësore që ndikojnë shërbimet frontend dhe backend, pastaj zbatoj ose vërtetoj rregullimet. Bashkëpunoj me ekipet frontend dhe backend për të ndrequr problemet dhe për të konfirmuar zgjidhjet para lëshimit. Zgjidh problemet në mjediset lokale, QA, staging dhe prodhimi. Përdor Cloudflare, Logz.io, Grafana dhe Coralogix për të zbuluar probleme dhe për të verifikuar rregullimet. Hulumtoj dhe ndreq problemet që lidhen me UI në bazat e kodit Angular, dhe koordinoj ndryshimet e lëshimit për të mbajtur vendosjet të qëndrueshme nëpër mjedise.",
-        "skills": [
-          "Cloudflare",
-          "Logz.io",
-          "Grafana",
-          "Coralogix",
-          "Angular",
-          "Feature flags",
-          "Menaxhimi i konfigurimit",
-          "Koordinimi i lëshimit"
-        ]
+        "skills":  [
+                                                        "MongoDB",
+                                                        "Database",
+                                                        "Grafana",
+                                                        "Coralogix",
+                                                        "Angular",
+                                                        "Feature flags",
+                                                        "Cloudflare",
+                                                        "Config management",
+                                                        "Release coordination"
+                                                    ],
+                                         "highlight":  true
       },
       {
-        "id": "mbështetje teknike",
+        "id": "techsupport",
         "title": "Inxhinier i Mbështetjes Teknike",
         "company": "B2TECH, Tiranë",
         "type": "Kohë të plotë",
@@ -169,14 +172,16 @@
           "Grafana",
           "Jira",
           "Lokalizim",
-          "Konfigurimi i markës"
-        ]
+          "Brand configuration"
+        ],
+        "highlight": false
       },
       {
-        "id": "I lirë",
-        "title": "Zhvillues Frontend i Lirë",
+        "id": "freelance",
+        "title": "Zhvillues Frontend Freelance",
         "company": "I vetëpunësuar",
-        "type": "I Lirë",
+        "type": "Freelance",
+
         "period": "Mars 2025 - Aktualisht",
         "description": "Zhvillova aplikacione web me React dhe Next.js, duke përfshirë integrime API dhe CMS. Krijova komponentë UI responsivë dhe aplikacione me shumë faqe me fokus te performanca dhe përdorshmëria. Implementova panele admini dhe sisteme përmbajtjesh me Sanity CMS. Dorëzova zgjidhje të plota frontend, duke përfshirë rrjedha autentifikimi, panele kontrolli dhe faqe ulëse.",
         "skills": [
@@ -185,8 +190,8 @@
           "Sanity CMS",
           "UI Responsiv",
           "Integrime API"
-        ]
-        
+        ],
+          "highlight": false
       }
     ]
   },
@@ -365,27 +370,27 @@
   },
   "certificateItems": {
     "meta-frontend": {
-      "title": "Certifikata Profesionale Front-End nga Meta",
+      "title": "Meta Front-End Developer",
       "issuer": "Meta",
       "courses": [
-        "Hyrje në Zhvillimin Front-End",
-        "Programimi me JavaScript",
-        "Kontrolli i Versionit",
-        "HTML dhe CSS në Detaj",
-        "Bazat e React",
-        "React i Avancuar",
-        "Bazat e Dizajnit UX/UI",
-        "Projekti Final Front-End (Capstone)"
+        "Introduction to Front-End Development",
+                                                                   "Programming with JavaScript",
+                                                                   "Version Control",
+                                                                   "HTML and CSS in Depth",
+                                                                   "React Basics",
+                                                                   "Advanced React",
+                                                                   "Principles of UX/UI Design",
+                                                                   "Front-End Developer Capstone",
+                                                                   "Coding Interview Preparation"
       ]
     },
     "angular": {
-      "title": "Certifikata Angular",
-      "issuer": "Akademia Online",
+      "title": "Mastering Angular Development",
+      "issuer": "Edureka",
       "courses": [
-        "Arkitekturë e bazuar në komponentë",
-        "Bazat e TypeScript",
-        "Modulet dhe shërbimet e Angular",
-        "Rrugëzimi dhe lidhja e të dhënave"
+        "Getting Started with Angular",
+       "Advanced Data Handling and Reactive Programming Concepts",
+        "Testing and Deploying Angular Applications"
       ]
     }
   }

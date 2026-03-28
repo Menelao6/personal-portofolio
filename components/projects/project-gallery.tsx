@@ -1,94 +1,327 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import Image from "next/image"
-import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Maximize2 } from "lucide-react"
+import {
+  X,
+  ChevronLeft,
+  ChevronRight,
+  ZoomIn,
+  ZoomOut,
+  Maximize2,
+  Play,
+  Pause,
+  LayoutGrid,
+  Monitor,
+  FileText,
+  Download,
+  Expand,
+} from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface ProjectGalleryProps {
   images: string[]
   projectTitle: string
+  /** Optional PDF path, e.g. "/assets/presentations/my-project.pdf" */
+  pdfUrl?: string
 }
 
-export function ProjectGallery({ images, projectTitle }: ProjectGalleryProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
-  const [lightboxIndex, setLightboxIndex] = useState(0)
-  const [isZoomed, setIsZoomed] = useState(false)
+// ─── Utility ─────────────────────────────────────────────────────────────────
 
-  // Keyboard navigation
+function useLockBodyScroll(active: boolean) {
   useEffect(() => {
-    if (!isLightboxOpen) return
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setIsLightboxOpen(false)
-        setIsZoomed(false)
-      } else if (e.key === 'ArrowLeft' && !isZoomed) {
-        handlePrevLightbox()
-      } else if (e.key === 'ArrowRight' && !isZoomed) {
-        handleNextLightbox()
-      }
-    }
-
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [isLightboxOpen, lightboxIndex, images.length, isZoomed])
-
-  // Prevent body scroll when lightbox is open
-  useEffect(() => {
-    if (isLightboxOpen) {
-      document.body.style.overflow = 'hidden'
+    if (active) {
+      const scrollY = window.scrollY
+      document.body.style.cssText = `overflow:hidden;position:fixed;top:-${scrollY}px;left:0;right:0;`
     } else {
-      document.body.style.overflow = 'unset'
+      const scrollY = document.body.style.top
+      document.body.style.cssText = ""
+      window.scrollTo(0, parseInt(scrollY || "0") * -1)
     }
-    return () => {
-      document.body.style.overflow = 'unset'
+  }, [active])
+}
+
+// ─── Fullscreen Lightbox ──────────────────────────────────────────────────────
+
+interface LightboxProps {
+  images: string[]
+  index: number
+  projectTitle: string
+  onClose: () => void
+  onNav: (i: number) => void
+}
+
+function Lightbox({ images, index, projectTitle, onClose, onNav }: LightboxProps) {
+  const [zoomed, setZoomed] = useState(false)
+  const [zoomPos, setZoomPos] = useState({ x: 50, y: 50 })
+  const imgRef = useRef<HTMLDivElement>(null)
+
+  useLockBodyScroll(true)
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose()
+      if (e.key === "ArrowLeft" && !zoomed) onNav((index - 1 + images.length) % images.length)
+      if (e.key === "ArrowRight" && !zoomed) onNav((index + 1) % images.length)
     }
-  }, [isLightboxOpen])
+    window.addEventListener("keydown", onKey)
+    return () => window.removeEventListener("keydown", onKey)
+  }, [index, images.length, zoomed, onClose, onNav])
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length)
-  }
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (!zoomed || !imgRef.current) return
+    const r = imgRef.current.getBoundingClientRect()
+    setZoomPos({
+      x: ((e.clientX - r.left) / r.width) * 100,
+      y: ((e.clientY - r.top) / r.height) * 100,
+    })
+  }, [zoomed])
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
-  }
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex flex-col bg-black/96 backdrop-blur-sm"
+      style={{ animation: "lb-in 0.18s ease" }}
+    >
+      <style>{`
+        @keyframes lb-in { from { opacity:0 } to { opacity:1 } }
+        @keyframes lb-slide { from { opacity:0; transform:scale(0.97) } to { opacity:1; transform:scale(1) } }
+      `}</style>
 
-  const handleNextLightbox = () => {
-    setLightboxIndex((prev) => (prev + 1) % images.length)
-    setIsZoomed(false)
-  }
+      {/* Top bar */}
+      <div className="flex items-center justify-between px-5 py-3 border-b border-white/10 flex-shrink-0">
+        <div className="flex items-center gap-3">
+          <span className="font-mono text-xs text-white/40 uppercase tracking-widest">
+            {projectTitle}
+          </span>
+          <span className="h-3 w-px bg-white/20" />
+          <span className="font-mono text-xs text-white/60 tabular-nums">
+            {index + 1} / {images.length}
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => { setZoomed(!zoomed); setZoomPos({ x: 50, y: 50 }) }}
+            className={cn(
+              "flex h-8 w-8 items-center justify-center rounded-lg transition-colors",
+              zoomed
+                ? "bg-primary/20 text-primary"
+                : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white"
+            )}
+            title={zoomed ? "Zoom out (Z)" : "Zoom in (Z)"}
+          >
+            {zoomed ? <ZoomOut className="h-4 w-4" /> : <ZoomIn className="h-4 w-4" />}
+          </button>
+          <button
+            onClick={onClose}
+            className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"
+            title="Close (ESC)"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
 
-  const handlePrevLightbox = () => {
-    setLightboxIndex((prev) => (prev - 1 + images.length) % images.length)
-    setIsZoomed(false)
-  }
+      {/* Image area */}
+      <div className="relative flex flex-1 min-h-0 items-center justify-center overflow-hidden">
+        {/* Prev */}
+        {images.length > 1 && !zoomed && (
+          <button
+            onClick={() => onNav((index - 1 + images.length) % images.length)}
+            className="absolute left-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 transition-all hover:scale-110"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+        )}
 
-  const openLightbox = (index: number) => {
-    setLightboxIndex(index)
-    setIsLightboxOpen(true)
-    setIsZoomed(false)
-  }
-
-  const closeLightbox = () => {
-    setIsLightboxOpen(false)
-    setIsZoomed(false)
-  }
-
-  if (images.length === 0) {
-    return (
-      <div className="overflow-hidden rounded-xl border border-border bg-card">
-        <div className="flex aspect-video items-center justify-center bg-muted/30 p-12">
-          <div className="flex flex-col items-center gap-4 text-center">
-            <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-              <span className="text-3xl font-bold font-mono">
-                {projectTitle.charAt(0)}
-              </span>
+        <div
+          ref={imgRef}
+          onMouseMove={handleMouseMove}
+          onClick={() => { setZoomed(!zoomed); setZoomPos({ x: 50, y: 50 }) }}
+          className={cn(
+            "relative w-full h-full",
+            zoomed ? "cursor-zoom-out overflow-auto" : "cursor-zoom-in flex items-center justify-center p-4"
+          )}
+          style={
+            zoomed
+              ? { transformOrigin: `${zoomPos.x}% ${zoomPos.y}%` }
+              : undefined
+          }
+        >
+          {!zoomed ? (
+            <div
+              className="relative max-w-5xl w-full"
+              style={{ maxHeight: "calc(100vh - 160px)", animation: "lb-slide 0.2s ease" }}
+            >
+              <Image
+                src={images[index]}
+                alt={`${projectTitle} screenshot ${index + 1}`}
+                width={1920}
+                height={1080}
+                className="w-full h-auto rounded-lg object-contain shadow-2xl"
+                style={{ maxHeight: "calc(100vh - 160px)" }}
+                priority
+                unoptimized
+              />
             </div>
-            <p className="text-sm text-muted-foreground">
-              Project screenshots coming soon
-            </p>
+          ) : (
+            <img
+              src={images[index]}
+              alt={`${projectTitle} screenshot ${index + 1}`}
+              className="w-auto h-auto"
+              style={{ minWidth: "160%", cursor: "zoom-out" }}
+            />
+          )}
+        </div>
+
+        {/* Next */}
+        {images.length > 1 && !zoomed && (
+          <button
+            onClick={() => onNav((index + 1) % images.length)}
+            className="absolute right-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 transition-all hover:scale-110"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+        )}
+      </div>
+
+      {/* Thumbnail strip */}
+      {images.length > 1 && (
+        <div className="flex-shrink-0 border-t border-white/10 bg-black/60 backdrop-blur-sm py-3 px-4">
+          <div className="flex justify-center gap-2 overflow-x-auto pb-1">
+            {images.map((img, i) => (
+              <button
+                key={i}
+                onClick={() => { onNav(i); setZoomed(false) }}
+                className={cn(
+                  "relative flex-shrink-0 overflow-hidden rounded-md transition-all",
+                  i === index
+                    ? "ring-2 ring-primary opacity-100 scale-105"
+                    : "opacity-40 hover:opacity-80 hover:scale-105"
+                )}
+                style={{ width: 72, height: 48 }}
+              >
+                <Image src={img} alt="" fill className="object-cover" sizes="72px" unoptimized />
+              </button>
+            ))}
           </div>
+        </div>
+      )}
+
+      {/* Hint */}
+      {!zoomed && (
+        <div className="absolute bottom-20 right-4 pointer-events-none flex items-center gap-1.5 rounded-lg bg-white/5 px-2.5 py-1.5 text-[10px] text-white/40 font-mono">
+          <kbd className="rounded bg-white/10 px-1">←</kbd>
+          <kbd className="rounded bg-white/10 px-1">→</kbd>
+          <span className="mx-1">navigate</span>
+          <kbd className="rounded bg-white/10 px-1">ESC</kbd>
+          <span>close</span>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// ─── PDF Viewer ───────────────────────────────────────────────────────────────
+
+function PDFViewer({ url, title }: { url: string; title: string }) {
+  return (
+    <div className="flex flex-col gap-3">
+      {/* Action bar */}
+      <div className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3">
+        <div className="flex items-center gap-2">
+          <FileText className="h-4 w-4 text-primary" />
+          <span className="text-sm font-medium text-foreground">{title} — Presentation</span>
+        </div>
+        <a
+          href={url}
+          download
+          className="flex items-center gap-1.5 rounded-lg border border-border bg-muted/50 px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors"
+        >
+          <Download className="h-3.5 w-3.5" />
+          Download PDF
+        </a>
+      </div>
+
+      {/* Embedded PDF */}
+      <div
+        className="relative overflow-hidden rounded-xl border border-border bg-card shadow-lg"
+        style={{ height: "70vh", minHeight: 480 }}
+      >
+        <iframe
+          src={`${url}#toolbar=1&navpanes=1&scrollbar=1&view=FitH`}
+          className="w-full h-full"
+          title={`${title} presentation PDF`}
+          allowFullScreen
+        />
+        {/* Fallback overlay — shown only if iframe fails */}
+        <noscript>
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-card">
+            <FileText className="h-12 w-12 text-muted-foreground" />
+            <p className="text-sm text-muted-foreground">PDF preview requires a modern browser.</p>
+            <a
+              href={url}
+              download
+              className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
+            >
+              Download PDF
+            </a>
+          </div>
+        </noscript>
+      </div>
+    </div>
+  )
+}
+
+// ─── Main Gallery ─────────────────────────────────────────────────────────────
+
+type ViewMode = "grid" | "slideshow"
+type Tab = "screenshots" | "presentation"
+
+export function ProjectGallery({ images, projectTitle, pdfUrl }: ProjectGalleryProps) {
+  const [tab, setTab]             = useState<Tab>("screenshots")
+  const [viewMode, setViewMode]   = useState<ViewMode>("slideshow")
+  const [current, setCurrent]     = useState(0)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [lightboxIdx, setLightboxIdx]   = useState(0)
+  const [playing, setPlaying]     = useState(false)
+  const [transitioning, setTransitioning] = useState(false)
+  const intervalRef = useRef<ReturnType<typeof setInterval>>(null)
+
+  const hasPdf = Boolean(pdfUrl)
+  const hasImages = images.length > 0
+
+  // Slideshow autoplay
+  useEffect(() => {
+    if (playing && viewMode === "slideshow") {
+      intervalRef.current = setInterval(() => {
+        navigate((c: number) => (c + 1) % images.length)
+      }, 3500)
+    }
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current) }
+  }, [playing, viewMode, images.length])
+
+  const navigate = useCallback((updater: ((c: number) => number) | number) => {
+    setTransitioning(true)
+    setTimeout(() => {
+      setCurrent(typeof updater === "function" ? updater : () => updater)
+      setTransitioning(false)
+    }, 180)
+  }, [])
+
+  const openLightbox = (i: number) => {
+    setLightboxIdx(i)
+    setLightboxOpen(true)
+    setPlaying(false)
+  }
+
+  if (!hasImages && !hasPdf) {
+    return (
+      <div className="flex aspect-video items-center justify-center rounded-2xl border border-border bg-card/50">
+        <div className="flex flex-col items-center gap-3 text-center">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+            <span className="text-2xl font-black font-mono">{projectTitle.charAt(0)}</span>
+          </div>
+          <p className="text-sm text-muted-foreground">Media coming soon</p>
         </div>
       </div>
     )
@@ -96,230 +329,249 @@ export function ProjectGallery({ images, projectTitle }: ProjectGalleryProps) {
 
   return (
     <>
-      {/* Main Gallery */}
-      <div className="space-y-4">
-        {/* Main Image Display */}
-        <div className="relative overflow-hidden rounded-xl border border-border bg-card shadow-lg">
-          <div className="relative aspect-video bg-muted/30">
-            <Image
-              src={images[currentIndex]}
-              alt={`${projectTitle} - Screenshot ${currentIndex + 1}`}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 896px"
-              priority
-            />
-            
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/20 pointer-events-none" />
-
-            {/* Navigation arrows */}
-            {images.length > 1 && (
-              <>
-                <button
-                  onClick={handlePrev}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-background/80 p-3 shadow-xl backdrop-blur-sm transition-all hover:bg-background hover:scale-110 active:scale-95 z-10"
-                  aria-label="Previous image"
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </button>
-                <button
-                  onClick={handleNext}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-background/80 p-3 shadow-xl backdrop-blur-sm transition-all hover:bg-background hover:scale-110 active:scale-95 z-10"
-                  aria-label="Next image"
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </button>
-              </>
-            )}
-
-            {/* Expand button */}
-            {/* <button
-              onClick={() => openLightbox(currentIndex)}
-              className="absolute right-4 top-4 rounded-full bg-background/80 p-2.5 shadow-xl backdrop-blur-sm transition-all hover:bg-background hover:scale-110 active:scale-95 group z-10"
-              aria-label="Open fullscreen"
+      {/* ── Tabs ─────────────────────────────────────────────────────────── */}
+      {hasPdf && hasImages && (
+        <div className="mb-4 flex gap-1 rounded-xl border border-border bg-muted/30 p-1 w-fit">
+          {[
+            { key: "screenshots", label: "Screenshots", icon: Monitor },
+            { key: "presentation", label: "Presentation", icon: FileText },
+          ].map(({ key, label, icon: Icon }) => (
+            <button
+              key={key}
+              onClick={() => setTab(key as Tab)}
+              className={cn(
+                "flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium transition-all",
+                tab === key
+                  ? "bg-card text-foreground shadow-sm border border-border"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
             >
-              <Maximize2 className="h-5 w-5 transition-transform group-hover:scale-110" />
-            </button> */}
-
-
-
-            {/* Image counter */}
-            {images.length > 1 && (
-              <div className="absolute left-4 top-4 rounded-lg bg-background/80 px-3 py-1.5 text-sm font-medium backdrop-blur-sm shadow-lg z-10">
-                {currentIndex + 1} / {images.length}
-              </div>
-            )}
-          </div>
+              <Icon className="h-3.5 w-3.5" />
+              {label}
+            </button>
+          ))}
         </div>
+      )}
 
-        {/* Thumbnail strip - ALWAYS visible on main gallery */}
-        {images.length > 1 && (
-          <div className="flex gap-2 overflow-x-auto pb-2">
-            {images.map((image, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`relative flex-shrink-0 overflow-hidden rounded-lg border-2 transition-all hover:scale-105 ${
-                  index === currentIndex
-                    ? 'border-primary ring-2 ring-primary/20'
-                    : 'border-border hover:border-primary/50'
-                }`}
-                style={{ width: '120px', height: '80px' }}
-              >
-                <Image
-                  src={image}
-                  alt={`Thumbnail ${index + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="120px"
-                  unoptimized
-                />
-                {index === currentIndex && (
-                  <div className="absolute inset-0 bg-primary/10" />
-                )}
-              </button>
-            ))}
+      {/* ── PDF Tab ───────────────────────────────────────────────────────── */}
+      {tab === "presentation" && pdfUrl && (
+        <PDFViewer url={pdfUrl} title={projectTitle} />
+      )}
+
+      {/* ── Screenshots Tab ───────────────────────────────────────────────── */}
+      {tab === "screenshots" && hasImages && (
+        <div className="flex flex-col gap-4">
+          {/* View mode toolbar */}
+          <div className="flex items-center justify-between">
+            <div className="flex gap-1 rounded-lg border border-border bg-muted/30 p-0.5">
+              {[
+                { key: "slideshow", icon: Monitor, label: "Slideshow" },
+                { key: "grid",      icon: LayoutGrid, label: "Grid" },
+              ].map(({ key, icon: Icon, label }) => (
+                <button
+                  key={key}
+                  onClick={() => { setViewMode(key as ViewMode); setPlaying(false) }}
+                  className={cn(
+                    "flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-all",
+                    viewMode === key
+                      ? "bg-card text-foreground shadow-sm border border-border"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                  title={label}
+                >
+                  <Icon className="h-3.5 w-3.5" />
+                  <span className="hidden sm:inline">{label}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Counter */}
+            <span className="font-mono text-xs text-muted-foreground tabular-nums">
+              {images.length} image{images.length !== 1 ? "s" : ""}
+            </span>
           </div>
-        )}
-      </div>
 
-      {/* Lightbox Modal */}
-      {isLightboxOpen && (
-        <div className="fixed inset-0 z-[100] bg-black">
-          {/* Top Controls Bar - ALWAYS visible */}
-          <div className="absolute top-0 left-0 right-0 z-[110] flex items-center justify-between p-4 bg-gradient-to-b from-black/80 to-transparent">
-            <div className="flex items-center gap-2">
-              {/* Zoom buttons */}
-              <button
-                onClick={() => setIsZoomed(!isZoomed)}
-                className="rounded-full bg-white/10 p-2.5 text-white backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110"
-                aria-label={isZoomed ? "Zoom out" : "Zoom in"}
+          {/* ── SLIDESHOW ─────────────────────────────────────────────────── */}
+          {viewMode === "slideshow" && (
+            <div className="flex flex-col gap-3">
+              {/* Main stage */}
+              <div
+                className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-lg"
+                style={{ aspectRatio: "16/9" }}
               >
-                {isZoomed ? <ZoomOut className="h-5 w-5" /> : <ZoomIn className="h-5 w-5" />}
-              </button>
-              
-              {/* Counter */}
+                {/* Image with crossfade */}
+                <div
+                  className="absolute inset-0 transition-opacity duration-200"
+                  style={{ opacity: transitioning ? 0 : 1 }}
+                >
+                  <Image
+                    src={images[current]}
+                    alt={`${projectTitle} — ${current + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 896px) 100vw, 896px"
+                    priority
+                    unoptimized
+                  />
+                </div>
+
+                {/* Subtle vignette */}
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.18) 100%)",
+                  }}
+                />
+
+                {/* Controls overlay — shown on hover */}
+                <div className="absolute inset-0 flex items-center justify-between px-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  {images.length > 1 && (
+                    <>
+                      <button
+                        onClick={() => navigate((c) => (c - 1 + images.length) % images.length)}
+                        className="flex h-10 w-10 items-center justify-center rounded-full bg-background/80 text-foreground shadow-lg backdrop-blur-sm hover:bg-background transition-all hover:scale-105"
+                      >
+                        <ChevronLeft className="h-5 w-5" />
+                      </button>
+                      <button
+                        onClick={() => navigate((c) => (c + 1) % images.length)}
+                        className="flex h-10 w-10 items-center justify-center rounded-full bg-background/80 text-foreground shadow-lg backdrop-blur-sm hover:bg-background transition-all hover:scale-105"
+                      >
+                        <ChevronRight className="h-5 w-5" />
+                      </button>
+                    </>
+                  )}
+                </div>
+
+                {/* Top-right action buttons */}
+                <div className="absolute right-3 top-3 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  {images.length > 1 && (
+                    <button
+                      onClick={() => setPlaying(!playing)}
+                      className={cn(
+                        "flex h-8 w-8 items-center justify-center rounded-full backdrop-blur-sm shadow transition-all hover:scale-105",
+                        playing
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-background/80 text-foreground"
+                      )}
+                      title={playing ? "Pause" : "Play slideshow"}
+                    >
+                      {playing ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />}
+                    </button>
+                  )}
+                  {/* <button
+                    onClick={() => openLightbox(current)}
+                    className="flex h-8 w-8 items-center justify-center rounded-full bg-background/80 text-foreground shadow backdrop-blur-sm transition-all hover:scale-105"
+                    title="Fullscreen"
+                  >
+                    <Expand className="h-3.5 w-3.5" />
+                  </button> */}
+                </div>
+
+                {/* Counter pill */}
+                {images.length > 1 && (
+                  <div className="absolute left-3 top-3 rounded-full bg-background/70 px-2.5 py-1 text-xs font-mono tabular-nums backdrop-blur-sm text-foreground shadow">
+                    {current + 1} / {images.length}
+                  </div>
+                )}
+
+                {/* Progress dots */}
+                {images.length > 1 && images.length <= 10 && (
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                    {images.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => navigate(i)}
+                        className={cn(
+                          "h-1.5 rounded-full transition-all duration-300",
+                          i === current
+                            ? "w-5 bg-primary"
+                            : "w-1.5 bg-white/50 hover:bg-white/80"
+                        )}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Filmstrip thumbnails */}
               {images.length > 1 && (
-                <div className="rounded-lg bg-white/10 px-3 py-2 text-sm font-medium text-white backdrop-blur-sm">
-                  {lightboxIndex + 1} / {images.length}
+                <div className="flex gap-2 overflow-x-auto pb-1">
+                  {images.map((img, i) => (
+                    <button
+                      key={i}
+                      onClick={() => { navigate(i); setPlaying(false) }}
+                      className={cn(
+                        "relative flex-shrink-0 overflow-hidden rounded-lg border-2 transition-all hover:scale-105",
+                        i === current
+                          ? "border-primary shadow-[0_0_0_3px_hsl(var(--primary)/0.15)]"
+                          : "border-border hover:border-primary/50"
+                      )}
+                      style={{ width: 100, height: 64 }}
+                    >
+                      <Image
+                        src={img}
+                        alt=""
+                        fill
+                        className="object-cover"
+                        sizes="100px"
+                        unoptimized
+                      />
+                      {i === current && (
+                        <div className="absolute inset-0 bg-primary/10" />
+                      )}
+                    </button>
+                  ))}
                 </div>
               )}
             </div>
-
-            {/* Close button */}
-            <button
-              onClick={closeLightbox}
-              className="rounded-full bg-white/10 p-2.5 text-white backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110"
-              aria-label="Close lightbox"
-            >
-              <X className="h-6 w-6" />
-            </button>
-          </div>
-
-          {/* Main Image Area */}
-          <div className="absolute inset-0" style={{ paddingTop: '72px', paddingBottom: images.length > 1 ? '120px' : '20px' }}>
-            {!isZoomed ? (
-              // NOT ZOOMED - Image fits viewport nicely
-              <div className="relative w-full h-full flex items-center justify-center p-4">
-                <div className="relative w-full h-full">
-                  <Image
-                    src={images[lightboxIndex]}
-                    alt={`${projectTitle} - Screenshot ${lightboxIndex + 1}`}
-                    fill
-                    className="object-contain"
-                    sizes="100vw"
-                    priority
-                    quality={100}
-                  />
-                </div>
-              </div>
-            ) : (
-              // ZOOMED - Image is scrollable at full resolution
-              <div className="w-full h-full overflow-auto">
-                <div className="min-w-full inline-block">
-                  <img
-                    src={images[lightboxIndex]}
-                    alt={`${projectTitle} - Screenshot ${lightboxIndex + 1}`}
-                    className="w-auto"
-                    style={{ minWidth: '200%', height: 'auto' }}
-                  />
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Navigation Arrows - Only when NOT zoomed */}
-          {images.length > 1 && !isZoomed && (
-            <>
-              <button
-                onClick={handlePrevLightbox}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-[110] rounded-full bg-white/10 p-4 text-white backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110"
-                aria-label="Previous image"
-              >
-                <ChevronLeft className="h-8 w-8" />
-              </button>
-              <button
-                onClick={handleNextLightbox}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-[110] rounded-full bg-white/10 p-4 text-white backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-110"
-                aria-label="Next image"
-              >
-                <ChevronRight className="h-8 w-8" />
-              </button>
-            </>
           )}
 
-          {/* Bottom Thumbnail Strip - ALWAYS at bottom, OUTSIDE image area */}
-          {images.length > 1 && (
-            <div className="absolute bottom-0 left-0 right-0 z-[110] bg-gradient-to-t from-black/90 to-transparent pt-8 pb-4">
-              <div className="flex gap-2 overflow-x-auto px-4 mx-auto max-w-full justify-center">
-                {images.map((image, index) => (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      setLightboxIndex(index)
-                      setIsZoomed(false)
-                    }}
-                    className={`relative flex-shrink-0 overflow-hidden rounded-lg border-2 transition-all hover:scale-105 ${
-                      index === lightboxIndex
-                        ? 'border-white ring-2 ring-white/50'
-                        : 'border-white/30 hover:border-white/70'
-                    }`}
-                    style={{ width: '80px', height: '60px' }}
-                  >
-                    <Image
-                      src={image}
-                      alt={`Thumbnail ${index + 1}`}
-                      fill
-                      className="object-cover"
-                      sizes="80px"
-                      unoptimized
-                    />
-                    {index === lightboxIndex && (
-                      <div className="absolute inset-0 bg-white/20" />
-                    )}
-                  </button>
-                ))}
-              </div>
+          {/* ── GRID ──────────────────────────────────────────────────────── */}
+          {viewMode === "grid" && (
+            <div className="grid gap-3 sm:grid-cols-2">
+              {images.map((img, i) => (
+                <button
+                  key={i}
+                  onClick={() => openLightbox(i)}
+                  className="group relative overflow-hidden rounded-xl border border-border bg-card shadow transition-all hover:shadow-md hover:border-primary/40 hover:-translate-y-0.5"
+                  style={{ aspectRatio: "16/9" }}
+                >
+                  <Image
+                    src={img}
+                    alt={`${projectTitle} — ${i + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 448px"
+                    unoptimized
+                  />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/30 transition-colors duration-300">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-background/0 group-hover:bg-background/90 transition-all duration-300 scale-75 group-hover:scale-100">
+                      <Maximize2 className="h-4 w-4 text-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </div>
+                  {/* Index */}
+                  <div className="absolute left-2 top-2 rounded-md bg-background/70 px-1.5 py-0.5 text-[10px] font-mono text-foreground/70 opacity-0 group-hover:opacity-100 transition-opacity">
+                    {i + 1}
+                  </div>
+                </button>
+              ))}
             </div>
           )}
-
-          {/* Instructions */}
-          <div className="absolute bottom-4 right-4 z-[110] text-xs text-white/70 backdrop-blur-sm bg-white/5 px-3 py-2 rounded-lg pointer-events-none">
-            {isZoomed ? (
-              <>Scroll to view • Click zoom to reset</>
-            ) : (
-              <>
-                {images.length > 1 && (
-                  <>
-                    <kbd className="px-1.5 py-0.5 bg-white/10 rounded">←</kbd>{' '}
-                    <kbd className="px-1.5 py-0.5 bg-white/10 rounded">→</kbd>{' '}
-                  </>
-                )}
-                <kbd className="px-1.5 py-0.5 bg-white/10 rounded">ESC</kbd> Close
-              </>
-            )}
-          </div>
         </div>
+      )}
+
+      {/* ── Lightbox ─────────────────────────────────────────────────────── */}
+      {lightboxOpen && (
+        <Lightbox
+          images={images}
+          index={lightboxIdx}
+          projectTitle={projectTitle}
+          onClose={() => setLightboxOpen(false)}
+          onNav={setLightboxIdx}
+        />
       )}
     </>
   )

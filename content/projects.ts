@@ -7,6 +7,7 @@ export interface Project {
   images: string[]
   liveUrl?: string
   repoUrl?: string
+  pdfUrl?: string
 }
 
 export const projects: Project[] = [
@@ -133,5 +134,6 @@ export const projects: Project[] = [
     ],
     liveUrl: "#",
     repoUrl: "#",
+    pdfUrl: "/assets/projects/NextEarth-AI.pdf",
   },
 ]

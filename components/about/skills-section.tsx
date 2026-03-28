@@ -33,6 +33,7 @@ const skillGroups = [
       "Component Architecture",
       "REST APIs",
       "PostgreSQL",
+      "MongoDB",
       "Component-Based Architecture",
     ],
   },

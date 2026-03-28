@@ -43,6 +43,7 @@
     "aboutPreview":  {
                          "label":  "About Me",
                          "title":  "A builder first, then a frontend developer",
+                         "cta":  "Learn More About Me",
                        "p1": "My path into frontend wasn't just tutorials and theory. I learned by shipping projects, freelancing, and working on real product problems.",
     "p2": "What I enjoy most is turning ideas into interfaces and making them feel polished, practical, and useful.",
       "stats":  [
@@ -145,12 +146,13 @@
                                          "period":  "Mar 2026 Present",
                                          "description":  "Work with application configurations, feature flags, and environment-specific settings across multiple products. Identify root causes affecting frontend and backend services, then implement or validate fixes. Collaborate with frontend and backend teams to debug issues and confirm solutions before release. Troubleshoot across local, QA, staging, and production environments. Use Cloudflare, Logz.io, Grafana, and Coralogix to detect issues and verify fixes. Investigate and fix UI-related issues in Angular codebases, and coordinate release changes to keep deployments stable across environments.",
                                          "skills":  [
-                                                        "Cloudflare",
-                                                        "Logz.io",
+                                                        "MongoDB",
+                                                        "Database",
                                                         "Grafana",
                                                         "Coralogix",
                                                         "Angular",
                                                         "Feature flags",
+                                                        "Cloudflare",
                                                         "Config management",
                                                         "Release coordination"
                                                     ],
@@ -366,7 +368,7 @@
                  },
     "certificateItems":  {
                              "meta-frontend":  {
-                                                   "title":  "Meta Front-End Professional Certificate",
+                                                   "title":  "Meta Front-End Developer",
                                                    "issuer":  "Meta",
                                                    "courses":  [
                                                                    "Introduction to Front-End Development",
@@ -375,18 +377,18 @@
                                                                    "HTML and CSS in Depth",
                                                                    "React Basics",
                                                                    "Advanced React",
-                                                                   "UX/UI Design Fundamentals",
-                                                                   "Front-End Capstone Project"
+                                                                   "Principles of UX/UI Design",
+                                                                   "Front-End Developer Capstone",
+                                                                   "Coding Interview Preparation"
                                                                ]
                                                },
                              "angular":  {
-                                             "title":  "Angular Certification",
-                                             "issuer":  "Online Academy",
+                                             "title":  "Mastering Angular Development",
+                                             "issuer":  "Edureka",
                                              "courses":  [
-                                                             "Component-based architecture",
-                                                             "TypeScript fundamentals",
-                                                             "Angular modules & services",
-                                                             "Routing and data binding"
+                                                             "Getting Started with Angular",
+                                                             "Advanced Data Handling and Reactive Programming Concepts",
+                                                             "Testing and Deploying Angular Applications"
                                                          ]
                                          }
                          }

@@ -47,11 +47,11 @@ export function ContactSection() {
 
             <div className="mt-8 flex flex-col gap-4">
               <a
-                href="mailto:hello@menelaos.dev"
+                href="mailto:menelaos.pone1@gmail.com"
                 className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground"
               >
                 <Mail className="h-5 w-5 text-primary" />
-                hello@menelaos.dev
+                menelaos.pone1@gmail.com
               </a>
             </div>
 

@@ -161,7 +161,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         ...style,
         transform: 'translateX(50%) translateY(24%) scale(0.76) rotateY(-15deg) rotateZ(-8deg)',
         zIndex: 20,
-        opacity: 0.3,
+        opacity: 0,
         filter: 'brightness(0.7) blur(3px)',
       }
     } else {
@@ -170,7 +170,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         ...style,
         transform: 'translateX(-50%) translateY(24%) scale(0.76) rotateY(15deg) rotateZ(8deg)',
         zIndex: 20,
-        opacity: 0.3,
+        opacity: 0,
         filter: 'brightness(0.7) blur(3px)',
       }
     }

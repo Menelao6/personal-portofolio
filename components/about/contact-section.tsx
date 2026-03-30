@@ -57,7 +57,7 @@ export function ContactSection() {
 
             <div className="mt-8 flex items-center gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/Menelao6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors hover:text-foreground hover:border-primary/30"
@@ -66,7 +66,7 @@ export function ContactSection() {
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://al.linkedin.com/in/menelaos-pone-2390a41ab"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors hover:text-foreground hover:border-primary/30"

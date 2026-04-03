@@ -224,7 +224,8 @@
                                  "messagePlaceholder":  "Tell me about your project...",
                                  "send":  "Send Message",
                                  "sending":  "Sending...",
-                                 "success":  "Message sent! I'll get back to you soon."
+                                 "success":  "Message sent! I'll get back to you soon.",
+                                 "error": "Unable to send message at this time. Please try again later."
                              }
                 },
     "tools":  {

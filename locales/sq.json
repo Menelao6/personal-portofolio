@@ -226,7 +226,8 @@
       "messagePlaceholder": "Më tregoni për projektin tuaj...",
       "send": "Dërgo Mesazhin",
       "sending": "Duke dërguar...",
-      "success": "Mesazhi u dërgua! Do t'ju përgjigjem së shpejti."
+      "success": "Mesazhi u dërgua! Do t'ju përgjigjem së shpejti.",
+      "error": "Nuk munda të dërgoj mesazhin. Provoni përsëri më vonë."
     }
   },
   "tools": {

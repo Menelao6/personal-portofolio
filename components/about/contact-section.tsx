@@ -17,17 +17,23 @@ export function ContactSection() {
   })
   const [sending, setSending] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (formData.honeypot) return // bot trap
 
-    setSending(true)
+    if (!formData.name || !formData.email || !formData.message) {
+      toast.error(t("contact.form.error") || "Please complete all fields.")
+      return
+    }
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    const subject = encodeURIComponent(`Contact request from ${formData.name}`)
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`,
+    )
+
+    window.location.href = `mailto:menelaos.pone1@gmail.com?subject=${subject}&body=${body}`
     toast.success(t("contact.form.success"))
     setFormData({ name: "", email: "", message: "", honeypot: "" })
-    setSending(false)
   }
 
   return (

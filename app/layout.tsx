@@ -6,6 +6,9 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Toaster } from "sonner"
 import { siteConfig } from "@/lib/seo"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 import "./globals.css"
 
@@ -108,6 +111,8 @@ export default function RootLayout({
             <Toaster position="bottom-right" />
           </LocaleProvider>
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

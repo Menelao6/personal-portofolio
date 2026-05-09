@@ -40,7 +40,7 @@
                         "live":  "Live",
                         "code":  "Code"
                     },
-    "aboutPreviewww":  {
+    "aboutPreview":  {
                          "label":  "About Me",
                          "title":  "A builder first, then a frontend developer",
                          "cta":  "Learn More About Me",

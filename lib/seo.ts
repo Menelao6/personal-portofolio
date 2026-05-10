@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-const FALLBACK_SITE_URL = "http://localhost:3000"
+const FALLBACK_SITE_URL = "http://localhost:30001"
 
 function normalizeSiteUrl(url: string) {
   const withProtocol = /^https?:\/\//i.test(url) ? url : `https://${url}`

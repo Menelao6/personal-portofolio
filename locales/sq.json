@@ -95,7 +95,6 @@
         "buttonLabel": "Shko te Rreth meje"
       },
       {
-
         "title": "Mjetet e vogla që kam ndërtuar për qejf",
         "description": "Më pëlqen gjithashtu të krijoj projekte më të vogla utilitare. Janë një mënyrë e mirë për të eksperimentuar, për të mbajtur aftësitë e mprehta dhe për t'i kthyer idetë e thjeshta në diçka interaktive.",
         "buttonLabel": "Eksploro Mjetet"
@@ -146,18 +145,18 @@
         "type": "Kohë të plotë",
         "period": "Mars 2026 Sot",
         "description": "Punoj me konfigurimet e aplikacionit, 'feature flags' dhe cilësimet specifike të mjedisit në produkte të shumta. Identifikoj shkaqet rrënjësore që ndikojnë shërbimet frontend dhe backend, pastaj zbatoj ose vërtetoj rregullimet. Bashkëpunoj me ekipet frontend dhe backend për të ndrequr problemet dhe për të konfirmuar zgjidhjet para lëshimit. Zgjidh problemet në mjediset lokale, QA, staging dhe prodhimi. Përdor Cloudflare, Logz.io, Grafana dhe Coralogix për të zbuluar probleme dhe për të verifikuar rregullimet. Hulumtoj dhe ndreq problemet që lidhen me UI në bazat e kodit Angular, dhe koordinoj ndryshimet e lëshimit për të mbajtur vendosjet të qëndrueshme nëpër mjedise.",
-        "skills":  [
-                                                        "MongoDB",
-                                                        "Database",
-                                                        "Grafana",
-                                                        "Coralogix",
-                                                        "Angular",
-                                                        "Feature flags",
-                                                        "Cloudflare",
-                                                        "Config management",
-                                                        "Release coordination"
-                                                    ],
-                                         "highlight":  true
+        "skills": [
+          "MongoDB",
+          "Database",
+          "Grafana",
+          "Coralogix",
+          "Angular",
+          "Feature flags",
+          "Cloudflare",
+          "Config management",
+          "Release coordination"
+        ],
+        "highlight": true
       },
       {
         "id": "techsupport",
@@ -181,7 +180,6 @@
         "title": "Zhvillues Frontend Freelance",
         "company": "I vetëpunësuar",
         "type": "Freelance",
-
         "period": "Mars 2025 - Aktualisht",
         "description": "Zhvillova aplikacione web me React dhe Next.js, duke përfshirë integrime API dhe CMS. Krijova komponentë UI responsivë dhe aplikacione me shumë faqe me fokus te performanca dhe përdorshmëria. Implementova panele admini dhe sisteme përmbajtjesh me Sanity CMS. Dorëzova zgjidhje të plota frontend, duke përfshirë rrjedha autentifikimi, panele kontrolli dhe faqe ulëse.",
         "skills": [
@@ -191,7 +189,7 @@
           "UI Responsiv",
           "Integrime API"
         ],
-          "highlight": false
+        "highlight": false
       }
     ]
   },
@@ -375,14 +373,14 @@
       "issuer": "Meta",
       "courses": [
         "Introduction to Front-End Development",
-                                                                   "Programming with JavaScript",
-                                                                   "Version Control",
-                                                                   "HTML and CSS in Depth",
-                                                                   "React Basics",
-                                                                   "Advanced React",
-                                                                   "Principles of UX/UI Design",
-                                                                   "Front-End Developer Capstone",
-                                                                   "Coding Interview Preparation"
+        "Programming with JavaScript",
+        "Version Control",
+        "HTML and CSS in Depth",
+        "React Basics",
+        "Advanced React",
+        "Principles of UX/UI Design",
+        "Front-End Developer Capstone",
+        "Coding Interview Preparation"
       ]
     },
     "angular": {
@@ -390,7 +388,7 @@
       "issuer": "Edureka",
       "courses": [
         "Getting Started with Angular",
-       "Advanced Data Handling and Reactive Programming Concepts",
+        "Advanced Data Handling and Reactive Programming Concepts",
         "Testing and Deploying Angular Applications"
       ]
     }

@@ -1,7 +1,6 @@
 {
     "nav": {
-        "home": "Test",
-        "homeTest": "HomeTest",
+        "home": "Home",
         "about": "About",
         "devTools": "Dev Tools"
     },

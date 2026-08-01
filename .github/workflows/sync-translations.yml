@@ -129,7 +129,30 @@ jobs:
           echo "No translation changes — skipping sync."
           exit 0
 
-      # ── 5. Checkout target repo ─────────────────────────────────────
+      # ── 5. Verify token can reach target repo ───────────────────────
+      - name: Verify token access to target repo
+        if: steps.diff.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.TRANSLATIONS_SYNC_TOKEN }}
+        run: |
+          HTTP_CODE=$(curl -s -o /tmp/repo-check.json -w "%{http_code}" \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/Menelao6/translations-test)
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "❌ Token cannot access Menelao6/translations-test (HTTP ${HTTP_CODE})."
+            echo "For a private target repo, the fine-grained PAT must:"
+            echo "  1. Include translations-test under Repository access"
+            echo "  2. Grant Contents: Read and write"
+            echo "  3. Grant Pull requests: Read and write"
+            cat /tmp/repo-check.json || true
+            exit 1
+          fi
+
+          echo "✅ Token can access translations-test"
+
+      # ── 6. Checkout target repo ─────────────────────────────────────
       - name: Checkout target repo
         if: steps.diff.outputs.has_changes == 'true'
         uses: actions/checkout@v4
@@ -138,7 +161,7 @@ jobs:
           token: ${{ secrets.TRANSLATIONS_SYNC_TOKEN }}
           path: target-repo
 
-      # ── 6. Copy diff JSON and push branch ───────────────────────────
+      # ── 7. Copy diff JSON and push branch ───────────────────────────
       - name: Push diff to target repo
         if: steps.diff.outputs.has_changes == 'true'
         run: |
@@ -167,7 +190,7 @@ jobs:
 
           git push origin "$BRANCH_NAME"
 
-      # ── 7. Open pull request ────────────────────────────────────────
+      # ── 8. Open pull request ────────────────────────────────────────
       - name: Open pull request on target repo
         if: steps.diff.outputs.has_changes == 'true'
         env:

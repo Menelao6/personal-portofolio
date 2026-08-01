@@ -6,9 +6,7 @@
     },
     "footer": {
         "role": "Frontend Developer",
-        "rights": "All rights reserved.",
-        "testRole": "Frontend Developer",
-        "Testrights": "All rights reserved.........."
+        "rights": "All rights reserved."
     },
     "hero": {
         "badge": "Available for work",

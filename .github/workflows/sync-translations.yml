@@ -6,6 +6,7 @@ on:
     paths:
       - "locales/en.json"
       - "locales/sq.json"
+  workflow_dispatch:
 
 jobs:
   sync-translations:
@@ -30,8 +31,19 @@ jobs:
       - name: Compute translation diffs
         id: diff
         run: |
-          BEFORE_SHA="${{ github.event.before }}"
-          AFTER_SHA="${{ github.event.after }}"
+          AFTER_SHA="${{ github.sha }}"
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            BEFORE_SHA=$(git rev-parse "${AFTER_SHA}^" 2>/dev/null || echo "")
+          else
+            BEFORE_SHA="${{ github.event.before }}"
+          fi
+
+          # First push to a branch reports an all-zero before SHA
+          if [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ] || [ -z "$BEFORE_SHA" ]; then
+            BEFORE_SHA=$(git rev-parse "${AFTER_SHA}^" 2>/dev/null || echo "")
+          fi
+
           SHORT_SHA="${AFTER_SHA:0:7}"
 
           echo "before_sha=$BEFORE_SHA" >> "$GITHUB_OUTPUT"

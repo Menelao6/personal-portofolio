@@ -2,7 +2,8 @@
   "nav": {
     "home": "Kreu",
     "about": "Rreth meje",
-    "devTools": "Mjetet e Zhvillimit"
+    "devTools": "Mjetet e Zhvillimit",
+    "syncTest": "Test i sinkronizimit të përkthimeve"
   },
   "footer": {
     "role": "Zhvillues Frontend",

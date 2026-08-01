@@ -1,0 +1,185 @@
+name: Sync Translations
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "locales/en.json"
+      - "locales/sq.json"
+
+jobs:
+  sync-translations:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      # ── 1. Checkout the current (after) commit ──────────────────────
+      - name: Checkout source repo (after)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # need history to access the before commit
+
+      # ── 2. Setup Node.js ────────────────────────────────────────────
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # ── 3. Extract before/after files and run diff ──────────────────
+      - name: Compute translation diffs
+        id: diff
+        run: |
+          BEFORE_SHA="${{ github.event.before }}"
+          AFTER_SHA="${{ github.event.after }}"
+          SHORT_SHA="${AFTER_SHA:0:7}"
+
+          echo "before_sha=$BEFORE_SHA" >> "$GITHUB_OUTPUT"
+          echo "after_sha=$AFTER_SHA" >> "$GITHUB_OUTPUT"
+          echo "short_sha=$SHORT_SHA" >> "$GITHUB_OUTPUT"
+
+          mkdir -p /tmp/before /tmp/after /tmp/diffs
+
+          FILES=("locales/en.json" "locales/sq.json")
+          HAS_CHANGES=false
+
+          for FILE in "${FILES[@]}"; do
+            BASENAME=$(basename "$FILE")
+
+            # Extract the before version (may not exist for new files)
+            if git cat-file -e "$BEFORE_SHA:$FILE" 2>/dev/null; then
+              git show "$BEFORE_SHA:$FILE" > "/tmp/before/$BASENAME"
+            else
+              echo "{}" > "/tmp/before/$BASENAME"
+            fi
+
+            # Extract the after version (may not exist if deleted)
+            if git cat-file -e "$AFTER_SHA:$FILE" 2>/dev/null; then
+              git show "$AFTER_SHA:$FILE" > "/tmp/after/$BASENAME"
+            else
+              echo "{}" > "/tmp/after/$BASENAME"
+            fi
+
+            # Run the diff script
+            set +e
+            node scripts/diff-translations.js \
+              "/tmp/before/$BASENAME" \
+              "/tmp/after/$BASENAME" \
+              --file "$BASENAME" \
+              --sha "$AFTER_SHA" \
+              > "/tmp/diffs/$BASENAME"
+            EXIT_CODE=$?
+            set -e
+
+            if [ $EXIT_CODE -eq 0 ]; then
+              HAS_CHANGES=true
+              echo "✅ Changes detected in $BASENAME"
+              cat "/tmp/diffs/$BASENAME"
+            elif [ $EXIT_CODE -eq 1 ]; then
+              echo "⏭️  No changes in $BASENAME"
+              rm -f "/tmp/diffs/$BASENAME"
+            else
+              echo "❌ Error processing $BASENAME"
+              exit 1
+            fi
+          done
+
+          # Merge all per-file diffs into one JSON array
+          if [ "$HAS_CHANGES" = true ]; then
+            # Combine all diff files into a single JSON array
+            echo "[" > /tmp/diffs/combined.json
+            FIRST=true
+            for DIFF_FILE in /tmp/diffs/*.json; do
+              [ "$DIFF_FILE" = "/tmp/diffs/combined.json" ] && continue
+              [ ! -f "$DIFF_FILE" ] && continue
+              if [ "$FIRST" = true ]; then
+                FIRST=false
+              else
+                echo "," >> /tmp/diffs/combined.json
+              fi
+              cat "$DIFF_FILE" >> /tmp/diffs/combined.json
+            done
+            echo "]" >> /tmp/diffs/combined.json
+
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            echo ""
+            echo "📦 Combined diff:"
+            cat /tmp/diffs/combined.json
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            echo "🟢 No translation changes detected. Stopping."
+          fi
+
+      # ── 4. Stop if no changes ───────────────────────────────────────
+      - name: Check for changes
+        if: steps.diff.outputs.has_changes != 'true'
+        run: |
+          echo "No translation changes — skipping sync."
+          exit 0
+
+      # ── 5. Checkout target repo ─────────────────────────────────────
+      - name: Checkout target repo
+        if: steps.diff.outputs.has_changes == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: Menelao6/translations-test
+          token: ${{ secrets.TRANSLATIONS_SYNC_TOKEN }}
+          path: target-repo
+
+      # ── 6. Copy diff JSON and push branch ───────────────────────────
+      - name: Push diff to target repo
+        if: steps.diff.outputs.has_changes == 'true'
+        run: |
+          SHORT_SHA="${{ steps.diff.outputs.short_sha }}"
+          AFTER_SHA="${{ steps.diff.outputs.after_sha }}"
+          BRANCH_NAME="sync/translations-${SHORT_SHA}"
+
+          cd target-repo
+
+          # Configure git
+          git config user.name "translation-sync-bot"
+          git config user.email "translation-sync-bot@users.noreply.github.com"
+
+          # Create new branch
+          git checkout -b "$BRANCH_NAME"
+
+          # Copy combined diff
+          mkdir -p diffs
+          cp /tmp/diffs/combined.json "diffs/translations-${SHORT_SHA}.json"
+
+          # Commit and push
+          git add diffs/
+          git commit -m "chore: sync translation changes from ${SHORT_SHA}
+
+          Source commit: https://github.com/Menelao6/personal-portofolio/commit/${AFTER_SHA}"
+
+          git push origin "$BRANCH_NAME"
+
+      # ── 7. Open pull request ────────────────────────────────────────
+      - name: Open pull request on target repo
+        if: steps.diff.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.TRANSLATIONS_SYNC_TOKEN }}
+        run: |
+          SHORT_SHA="${{ steps.diff.outputs.short_sha }}"
+          AFTER_SHA="${{ steps.diff.outputs.after_sha }}"
+          BRANCH_NAME="sync/translations-${SHORT_SHA}"
+
+          # Build PR body from the diff summary
+          BODY="## 🌐 Translation Changes Detected
+
+          **Source commit:** [${SHORT_SHA}](https://github.com/Menelao6/personal-portofolio/commit/${AFTER_SHA})
+          **Source repo:** \`Menelao6/personal-portofolio\`
+          **Files checked:** \`en.json\`, \`sq.json\`
+
+          The diff JSON file is at \`diffs/translations-${SHORT_SHA}.json\`.
+
+          ---
+          *Auto-generated by [sync-translations](https://github.com/Menelao6/personal-portofolio/actions) workflow.*"
+
+          gh pr create \
+            --repo "Menelao6/translations-test" \
+            --base main \
+            --head "$BRANCH_NAME" \
+            --title "chore: translation sync from ${SHORT_SHA}" \
+            --body "$BODY"

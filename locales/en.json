@@ -2,10 +2,10 @@
     "nav": {
         "home": "Home",
         "about": "About",
-        "devTools": "Dev Tools testting"
+        "devTools": "Dev Tools"
     },
     "footer": {
-        "role": "Frontend Developer testingggg",
+        "role": "Frontend Developer",
         "rights": "All rights reserved."
     },
     "hero": {

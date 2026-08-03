@@ -36,7 +36,9 @@
         "subtitle": "These are the projects that best represent how I work: hands-on, curious, and focused on building things that feel real, useful, and well put together."
     },
     "projectCard": {
-        "viewDetails": "View Details",
+        "viewDetails": "View Detailss",
+        "viewCode": "View Code",
+        "viewInfo": "View Info",
         "live": "Live",
         "code": "Code"
     },
